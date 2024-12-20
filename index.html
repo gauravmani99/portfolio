@@ -42,44 +42,66 @@
     </nav><!-- End of Page Navbar -->
 
     <!-- page header -->
-    <header id="home" class="header">
-        <div class="overlay"></div>
-        <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">HI!</span>
-                <span class="down">I am Gaurav Mani Tripathi</span>
+    <header id="home" class="header" style="position: relative; background-color: #2c3e50; height: 80vh; color: #fff; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 0 20px;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(209, 130, 130, 0.6); z-index: 1;"></div>
+        <div class="header-content container" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+            <!-- Title -->
+            <h1 class="header-title" style="font-size: 3rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; line-height: 1.2; padding-top: 150px;">
+                <span class="up" style="font-size: 2.2rem; display: block; opacity: 0.8;">Hello!</span>
+                <span class="down" style="font-size: 3.8rem; font-weight: 800; color: #61c9e1; display: block; opacity: 1; text-shadow: 2px 2px 4px rgba(248, 246, 246, 0.4);">
+                    I'm Gaurav Mani Tripathi
+                </span>
             </h1>
-            <p class="header-subtitle">FULL-STACK DESIGNER</p>            
-
-            <button class="btn btn-primary">Visit My Works</button>
-        </div>              
-    </header><!-- end of page header -->
-
+            <!-- Subtitle -->
+            <p class="header-subtitle" style="font-size: 1.4rem; font-weight: 300; margin-bottom: 30px; opacity: 0.9; letter-spacing: 1px; color: #c43ea2;">
+                Full-Stack Designer & Developer
+            </p>
+            <!-- Button -->
+            <button class="btn btn-primary" style="background-color: #ad6255; color: #fff; border: none; padding: 15px 35px; font-size: 1.1rem; font-weight: 600; border-radius: 50px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" onmouseover="this.style.backgroundColor='#e74c3c'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#ff6347'; this.style.transform='scale(1)'">
+                Visit My Works
+            </button>
+        </div>
+    </header><!-- End of page header -->
+    
     <!-- about section -->
-    <section class="section pt-0" id="about">
+    <section class="section pt-0" id="about" style="background-color: #f4f7fc; padding: 80px 20px;">
         <!-- container -->
-        <div class="container text-center">
+        <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
             <!-- about wrapper -->
-            <div class="about">
-                <div class="about-img-holder">
-                    <img src="assets/imgs/gaurav.png" class="about-img" alt=" " style="height: 350px; width: 350px;">
-                </div>
+            <div class="about" style="display: flex; flex-direction: column; align-items: center;">
+                <!-- about image -->
+                <div class="about-img-holder" 
+     style="margin-bottom: 30px; margin-top: 40px; 
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease-in-out; 
+            perspective: 1000px;">
+    <img src="assets/imgs/gaurav.png" class="about-img" alt=" " 
+         style="height: 350px; width: 350px; 
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 10px; 
+                transform-style: preserve-3d;">
+</div>
+
                 <div class="about-caption">
-                    <p class="section-subtitle">Who Am I ?</p>
-                    <h2 class="section-title mb-3">About Me</h2>
-                    <p>
-                        I am Gaurav Mani Tripathi, a Computer Science Engineering student with a strong passion for software development. I have hands-on experience creating diverse projects using Java and Spring Boot, showcasing my skills in backend development, API design, and scalable application architecture. My projects reflect my commitment to delivering efficient and innovative solutions, and I continuously strive to enhance my technical expertise.              
+                    <p class="section-subtitle" style="font-size: 1.2rem; font-weight: 600; color: #5c5e62; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Who Am I?</p>
+                    <h2 class="section-title mb-3" style="font-size: 2.8rem; font-weight: 700; color: #2c3e50; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);">
+                        About Me
+                    </h2>
+                    <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #7d7d7d; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">
+                        I am Gaurav Mani Tripathi, a Computer Science Engineering student with a strong passion for software development. I have hands-on experience creating diverse projects using Java and Spring Boot, showcasing my skills in backend development, API design, and scalable application architecture. My projects reflect my commitment to delivering efficient and innovative solutions, and I continuously strive to enhance my technical expertise.
                     </p>
                     <!-- Resume Download Section -->
-                    <div class="download-resume">
-                        <p class="mt-4">Interested in learning more about my experience? Download my resume below:</p>
-                        <a href="assets/gauravmaniresume.pdf" class="btn btn-rounded btn-outline-primary mt-4" download>
-                            <i class="ti-download"></i> Download My Resume
+                    <div class="download-resume" style="margin-top: 40px;">
+                        <p class="mt-4" style="font-size: 1rem; font-weight: 400; color: #5c5e62;">Interested in learning more about my experience? Download my resume below:</p>
+                        <a href="assets/gauravmaniresume.pdf" class="btn btn-rounded btn-outline-primary mt-4" download style="padding: 12px 30px; font-size: 1.1rem; font-weight: 600; color: #fff; background-color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);">
+                            <i class="ti-download" style="margin-right: 8px;"></i> Download My Resume
                         </a>
                     </div>
-                </div>
-                          
+                </div>              
             </div><!-- end of about wrapper -->
+        </div><!-- end of container -->
+    </section><!-- end of about section -->
+    
         </div><!-- end of container -->
     </section> <!-- end of about section -->
 
@@ -198,28 +220,31 @@
         </div><!-- end of container -->
     </section><!-- end of blog section -->
 
+    
+
     <!-- contact section -->
     <section class="section" id="contact">
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form action="send_email.php" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>                 
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>                 
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email"requried>                 
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>                 
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
+                        <textarea name="message" id="comment" rows="6" class="form-control" placeholder="Write Something"></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
                         <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">                  
                     </div>
                 </div>  
-            </form><!-- end of contact form -->
+            </form>
+            
         </div><!-- end of container -->
     </section><!-- end of contact section -->
 
