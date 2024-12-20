@@ -1,0 +1,45 @@
+.footer {
+    background-color: #1a1a1a; /* Dark background */
+    padding: 20px 0;
+    color: #ffffff; /* Text color */
+    text-align: center;
+    border-top: 2px solid #444;
+}
+
+.footer a {
+    color: #00bcd4; /* Light blue for links */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+.social-heading {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 1.5rem; /* Icon size */
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00bcd4; /* Hover color for icons */
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.social-links {
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: center;
+    gap: 15px;
+}
