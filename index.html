@@ -1,103 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with Meyawo landing page.">
     <meta name="author" content="Devcrud">
     <title>Gaurav Mani Tripathi poryfolio</title>
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Bootstrap + Meyawo main styles -->
-	<link rel="stylesheet" href="assets/css/meyawo.css">
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(135deg, #232526 0%, #485563 100%);
+            color: #f5f5f5;
+        }
+        .java-bg {
+            background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #232526 0%, #485563 100%);
+        }
+        .java-orange {
+            color: #f89820;
+        }
+        .java-blue {
+            color: #3572A5;
+        }
+        .section-title, .section-subtitle {
+            color: #f89820 !important;
+            text-shadow: 0 2px 12px #3572A5;
+        }
+        .portfolio-card {
+            background: rgba(35,37,38,0.85);
+            border: 2px solid #f89820;
+            color: #f5f5f5;
+        }
+        .portfolio-card-caption {
+            background: rgba(53,114,165,0.12);
+        }
+        .portfolio-card:hover {
+            background: rgba(53,114,165,0.95);
+            border-color: #f89820;
+        }
+        .btn-primary, .btn-outline-primary {
+            background: linear-gradient(90deg, #f89820 0%, #3572A5 100%);
+            color: #fff;
+        }
+        .btn-primary:hover, .btn-outline-primary:hover {
+            background: linear-gradient(90deg, #3572A5 0%, #f89820 100%);
+        }
+        .custom-navbar {
+            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.85)!important;
+            border-radius: 0 0 24px 24px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+        }
+        .portfolio-card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.12);
+            transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+            overflow: hidden;
+            position: relative;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-12px) scale(1.06) rotate(-1deg);
+            box-shadow: 0 16px 48px rgba(44,62,80,0.18);
+            background: rgba(255,255,255,0.95);
+        }
+        .portfolio-card-img {
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+            transition: box-shadow 0.3s;
+        }
+        .portfolio-card:hover .portfolio-card-img {
+            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+        }
+        .portfolio-card-caption {
+            background: rgba(97,201,225,0.12);
+            border-radius: 0 0 18px 18px;
+            padding: 18px 0 10px 0;
+            transition: background 0.3s;
+        }
+        .portfolio-card:hover .portfolio-card-caption {
+            background: rgba(97,201,225,0.22);
+        }
+        .section-title, .section-subtitle {
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .section-title:hover, .section-subtitle:hover {
+            color: #3498db;
+            text-shadow: 0 2px 12px #61c9e1;
+        }
+        .navbar .nav .item .link {
+            position: relative;
+            transition: color 0.3s;
+            font-weight: 600;
+            font-size: 1.08rem;
+        }
+        .navbar .nav .item .link::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -4px;
+            width: 100%; height: 2px;
+            background: #61c9e1;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .navbar .nav .item .link:hover::after {
+            transform: scaleX(1);
+        }
+        .btn-primary, .btn-outline-primary {
+            background: linear-gradient(90deg, #61c9e1 0%, #c43ea2 100%);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.12);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary:hover, .btn-outline-primary:hover {
+            background: linear-gradient(90deg, #c43ea2 0%, #61c9e1 100%);
+            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+        }
+        .about-img-holder {
+            background: rgba(255,255,255,0.6);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.12);
+            padding: 18px;
+        }
+        .footer {
+            background: rgba(255,255,255,0.85);
+            border-radius: 24px 24px 0 0;
+            box-shadow: 0 -4px 24px rgba(44,62,80,0.08);
+        }
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #61c9e1;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover {
+            color: #c43ea2;
+            transform: scale(1.2) rotate(-8deg);
+        }
+    </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <!-- Recruiter Quick Contact Section -->
+    <div id="recruiter-contact" class="animate__animated animate__fadeInDown" style="position:fixed;top:0;left:0;width:100vw;z-index:99999;background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;padding:12px 0;text-align:center;box-shadow:0 2px 12px rgba(44,62,80,0.12);font-size:1.15rem;font-weight:600;">
+        <span style="margin-right:18px;">Recruiters: Interested in hiring me?</span>
+        <a href="mailto:gauravmani9161@gmail.com" style="color:#fff;font-weight:700;margin-right:16px;text-decoration:underline;">Email</a>
+        <a href="https://wa.me/919936916161" target="_blank" style="color:#fff;font-weight:700;margin-right:16px;text-decoration:underline;">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/gaurav-mani-90bb6319a/" target="_blank" style="color:#fff;font-weight:700;text-decoration:underline;">LinkedIn</a>
+    </div>
 
+    <!-- Animated Background -->
+    <div id="animated-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></div>
     <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <nav class="custom-navbar animate__animated animate__fadeInDown" data-spy="affix" data-offset-top="20" style="background: #fff; box-shadow: 0 2px 8px rgba(44,62,80,0.07);">
         <div class="container">
-            <a class="logo" href="#">My Portfolio</a>         
+            <a class="logo" href="#" style="font-weight:700; color:#2c3e50; font-size:1.5rem;">My Portfolio</a>
             <ul class="nav">
-                <li class="item">
-                    <a class="link" href="#home">Home</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#about">About</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#portfolio">Project</a>
-                </li>
-               
-                <li class="item">
-                    <a class="link" href="#contact">Contact</a>
-                </li>
-               
+                <li class="item"><a class="link" href="#home">Home</a></li>
+                <li class="item"><a class="link" href="#about">About</a></li>
+                <li class="item"><a class="link" href="#portfolio">Projects</a></li>
+                <li class="item"><a class="link" href="#contact">Contact</a></li>
             </ul>
             <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
                 <div class="hamburger-box">
                   <div class="hamburger-inner"></div>
                 </div>
             </a>
-        </div>          
-    </nav><!-- End of Page Navbar -->
+        </div>
+    </nav>
 
     <!-- page header -->
     <header id="home" class="header" style="position: relative; background-color: #2c3e50; height: 80vh; color: #fff; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 0 20px;">
-        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(209, 130, 130, 0.6); z-index: 1;"></div>
-        <div class="header-content container" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
-            <!-- Title -->
-            <h1 class="header-title" style="font-size: 3rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; line-height: 1.2; padding-top: 150px;">
-                <span class="up" style="font-size: 2.2rem; display: block; opacity: 0.8;">Hello!</span>
-                <span class="down" style="font-size: 3.8rem; font-weight: 800; color: #61c9e1; display: block; opacity: 1; text-shadow: 2px 2px 4px rgba(248, 246, 246, 0.4);">
-                    I'm Gaurav Mani Tripathi
+        <!-- Java Developer Branding -->
+        <div class="animate__animated animate__fadeInUp" style="margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:18px;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:48px;width:48px;">
+            <span style="font-size:1.15rem;color:#f89820;background:rgba(53,114,165,0.18);padding:8px 24px;border-radius:24px;box-shadow:0 2px 12px #3572A5;font-weight:700;">Java Backend Developer | Spring Boot Specialist</span>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:48px;width:48px;">
+        </div>
+    <!-- Floating Hire Me Button -->
+    <a href="#contact" id="floatingHireMe" class="btn btn-primary animate__animated animate__pulse animate__infinite" style="position:fixed;bottom:96px;right:32px;z-index:99999;font-size:1.15rem;font-weight:700;border-radius:32px;padding:16px 32px;box-shadow:0 4px 16px rgba(44,62,80,0.18);background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;transition:background 0.3s,transform 0.3s;">Hire Me</a>
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(209,130,130,0.6) 0%, rgba(97,201,225,0.4) 100%); z-index: 1;"></div>
+        <div class="header-content container animate__animated animate__fadeInUp" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto;">
+            <!-- Professional Java Intro -->
+            <h1 class="header-title animate__animated animate__fadeInDown java-orange" style="font-size: 3.2rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px; line-height: 1.2; padding-top: 120px;">
+                <span class="up animate__animated animate__fadeInLeft java-blue" style="font-size: 2.2rem; display: block; opacity: 0.8;">Hi, I'm</span>
+                <span class="down animate__animated animate__fadeInRight java-orange" style="font-size: 3.8rem; font-weight: 900; display: block; opacity: 1; text-shadow: 2px 2px 4px #3572A5;">
+                    Gaurav Mani Tripathi
                 </span>
             </h1>
-            <!-- Subtitle -->
-            <p class="header-subtitle" style="font-size: 1.4rem; font-weight: 300; margin-bottom: 30px; opacity: 0.9; letter-spacing: 1px; color: #c43ea2;">
-                Full-Stack Designer & Developer
+            <p class="header-subtitle animate__animated animate__fadeInUp java-blue" style="font-size: 1.5rem; font-weight: 400; margin-bottom: 24px; opacity: 0.95; letter-spacing: 1px;">
+                Java Backend Developer | Spring Boot | REST APIs | MySQL | Problem Solver
             </p>
-            <!-- Button -->
-            <button class="btn btn-primary" style="background-color: #ad6255; color: #fff; border: none; padding: 15px 35px; font-size: 1.1rem; font-weight: 600; border-radius: 50px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" onmouseover="this.style.backgroundColor='#e74c3c'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#ff6347'; this.style.transform='scale(1)'">
-                Visit My Works
-            </button>
+            <div class="animate__animated animate__fadeInUp" style="margin-bottom: 24px;">
+                <span style="font-size:1.1rem;color:#f89820;font-weight:500;">Building robust, scalable, and secure enterprise solutions with Java and Spring Boot.</span>
+            </div>
+            <!-- Skills Highlight -->
+            <div class="skills-highlight animate__animated animate__fadeInUp" style="display:flex;justify-content:center;gap:32px;margin-bottom:32px;flex-wrap:wrap;">
+                <div style="text-align:center;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:32px;width:32px;">
+                    <br><span style="font-size:1rem;color:#f89820;">Java</span>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:32px;width:32px;">
+                    <br><span style="font-size:1rem;color:#3572A5;">Spring Boot</span>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" style="height:32px;width:32px;">
+                    <br><span style="font-size:1rem;color:#f89820;">MySQL</span>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style="height:32px;width:32px;">
+                    <br><span style="font-size:1rem;color:#3572A5;">Git</span>
+                </div>
+            </div>
+            <!-- Call to Action -->
+            <a href="#contact" class="btn btn-primary animate__animated animate__pulse animate__infinite" style="background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;border:none;padding:15px 40px;font-size:1.2rem;font-weight:700;border-radius:50px;transition:all 0.3s;cursor:pointer;box-shadow:0px 4px 16px rgba(44,62,80,0.18);">Hire Me</a>
         </div>
     </header><!-- End of page header -->
     
     <!-- about section -->
-    <section class="section pt-0" id="about" style="background-color: #f4f7fc; padding: 80px 20px;">
+    <section class="section pt-0 java-bg" id="about" style="padding: 80px 20px;">
         <!-- container -->
-        <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
+        <div class="container text-center animate__animated animate__fadeInUp" style="max-width: 900px; margin: 0 auto;">
             <!-- about wrapper -->
             <div class="about" style="display: flex; flex-direction: column; align-items: center;">
                 <!-- about image -->
-                <div class="about-img-holder" 
-     style="margin-bottom: 30px; margin-top: 40px; 
-            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); 
-            transition: transform 0.3s ease-in-out; 
-            perspective: 1000px;">
-    <img src="assets/imgs/gaurav mani.jpg" class="about-img" alt=" " 
-         style="height: 350px; width: 350px; 
-                transition: transform 0.3s ease-in-out; 
-                border-radius: 10px; 
-                transform-style: preserve-3d;">
-</div>
-
-                <div class="about-caption">
+                <div class="about-img-holder animate__animated animate__zoomIn" style="margin-bottom: 30px; margin-top: 40px; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out; perspective: 1000px;">
+                    <img src="assets/imgs/gaurav mani.jpg" class="about-img" alt=" " style="height: 350px; width: 350px; transition: transform 0.3s ease-in-out; border-radius: 10px; transform-style: preserve-3d;">
+                </div>
+                <div class="about-caption animate__animated animate__fadeInUp">
                     <p class="section-subtitle" style="font-size: 1.2rem; font-weight: 600; color: #5c5e62; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Who Am I?</p>
-                    <h2 class="section-title mb-3" style="font-size: 2.8rem; font-weight: 700; color: #2c3e50; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);">
-                        About Me
-                    </h2>
-                    <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #7d7d7d; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">
-                        I am Gaurav Mani Tripathi, a Computer Science Engineering student with a strong passion for software development. I have hands-on experience creating diverse projects using Java and Spring Boot, showcasing my skills in backend development, API design, and scalable application architecture. My projects reflect my commitment to delivering efficient and innovative solutions, and I continuously strive to enhance my technical expertise.
-                    </p>
+                    <h2 class="section-title mb-3" style="font-size: 2.8rem; font-weight: 700; color: #2c3e50; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);">About Me</h2>
+                    <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #7d7d7d; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">I am a Computer Science Engineering graduate with a strong passion for software development and problem solving. My expertise includes Java, Spring Boot, API design, and scalable application architecture. I am committed to delivering efficient, innovative solutions and thrive in collaborative environments.</p>
                     <!-- Resume Download Section -->
-                    <div class="download-resume" style="margin-top: 40px;">
-                        <p class="mt-4" style="font-size: 1rem; font-weight: 400; color: #5c5e62;">Interested in learning more about my experience? Download my resume below:</p>
-                        <a href="assets/Gaurav Mani Resume Updated11.pdf" class="btn btn-rounded btn-outline-primary mt-4" download style="padding: 12px 30px; font-size: 1.1rem; font-weight: 600; color: #fff; background-color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);">
-                            <i class="ti-download" style="margin-right: 8px;"></i> Download My Resume
-                        </a>
+                    <div class="download-resume animate__animated animate__fadeInUp" style="margin-top: 40px;">
+                        <p class="mt-4" style="font-size: 1rem; font-weight: 400; color: #5c5e62;">Download my resume to see my experience and skills:</p>
+                        <a href="assets/Gaurav Mani Resume Updated11.pdf" class="btn btn-rounded btn-outline-primary mt-4 animate__animated animate__pulse animate__infinite" download style="padding: 12px 30px; font-size: 1.1rem; font-weight: 600; color: #fff; background-color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);"><i class="ti-download" style="margin-right: 8px;"></i> Download My Resume</a>
                     </div>
-                </div>              
+                </div>
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
     </section><!-- end of about section -->
@@ -109,104 +257,110 @@
     
     <!-- portfolio section -->
     <section class="section" id="portfolio">
-        <div class="container text-center">
-            <p class="section-subtitle">MY</p>
-            <h6 class="section-title mb-6">Projects</h6>
-            <!-- row -->
-            <div class="row my-3">
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="assets/imgs/amazon.png" class="portfolio-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">    
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                <p class="font-weight-normal">Category: Amazon Clone</p>
-                            </span>                         
-                        </span>                     
-                    </a>
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <p class="section-subtitle animate__animated animate__fadeInLeft java-orange">MY PROJECTS</p>
+        <h6 class="section-title mb-6 animate__animated animate__fadeInRight java-orange">Projects</h6>
+        <!-- Featured Projects -->
+        <div class="row my-3">
+            <div class="col-md-6 animate__animated animate__zoomIn">
+                <div class="portfolio-card" style="border:2px solid #61c9e1;">
+                    <img src="assets/imgs/Screenshot 2024-08-31 000112.png" class="portfolio-card-img" alt="NOU e-Gyan PORTAL">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4 style="color:#61c9e1;font-weight:700;">NOU e-Gyan Portal</h4>
+                            <p class="font-weight-normal">Java, Spring Boot, MySQL</p>
+                            <span style="font-size:0.98rem;color:#2c3e50;">A scalable university portal for online learning, featuring secure authentication, REST APIs, and responsive UI. <b>Role:</b> Lead Developer</span>
+                        </span>
+                    </span>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/Screenshot 2024-08-31 000112.png" class="img-responsive rounded" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>FULL-STACK</h5>
-                                <p class="font-weight-normal">Category: NOU e-Gyan PORTAL</p>
-                            </span>                         
-                        </span>                         
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/restto.png" class="img-responsive rounded" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                <p class="font-weight-normal">Category: Restaurant  Clone</p>
-                            </span>                         
-                        </span>                         
-                    </a>
-                </div>
-
             </div>
-            <div class="row my-4">
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="assets/imgs/music.png" class="portfolio-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">    
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                <p class="font-weight-normal">Category: music player</p>
-                            </span>                         
-                        </span>                     
-                    </a>
+            <div class="col-md-6 animate__animated animate__zoomIn animate__delay-1s">
+                <div class="portfolio-card" style="border:2px solid #c43ea2;">
+                    <img src="assets/imgs/student1.jpeg" class="portfolio-card-img" alt="Student Management System">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4 style="color:#c43ea2;font-weight:700;">Student Management System</h4>
+                            <p class="font-weight-normal">Java, Spring Boot, SQL</p>
+                            <span style="font-size:0.98rem;color:#2c3e50;">Automated student records, attendance, and results with a modern dashboard. <b>Role:</b> Developer</span>
+                        </span>
+                    </span>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/student1.jpeg" class="img-responsive rounded" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>FULL-STACK</h5>
-                                <p class="font-weight-normal">Category: Student Management System</p>
-                            </span>                         
-                        </span>                         
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/railway.jpeg" class="img-responsive rounded" alt="">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>JAVA Project</h5>
-                                <p class="font-weight-normal">Category:Reservation System</p>
-                            </span>                         
-                        </span>                         
-                    </a>
-                </div>
-
             </div>
-            <!-- end of row -->
-        </div><!-- end of container -->
-    </section> <!-- end of portfolio section -->
+        </div>
+        <!-- Other Projects -->
+        <div class="row my-4">
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
+                <a href="#" class="portfolio-card">
+                    <img class="portfolio-card-img" src="assets/imgs/amazon.png" alt="Amazon Clone">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Amazon Clone (Java)</h4>
+                            <p class="font-weight-normal">Java, Spring Boot, REST API</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-3s">
+                <a href="#" class="portfolio-card">
+                    <img class="portfolio-card-img" src="assets/imgs/restto.png" alt="Restaurant Clone">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Restaurant Clone</h4>
+                            <p class="font-weight-normal">Java, Spring Boot, MySQL</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-4s">
+                <a href="#" class="portfolio-card">
+                    <img class="portfolio-card-img" src="assets/imgs/music.png" alt="Music Player">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Music Player</h4>
+                            <p class="font-weight-normal">Java, Spring Boot</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-5s">
+                <a href="#" class="portfolio-card">
+                    <img class="portfolio-card-img" src="assets/imgs/railway.jpeg" alt="Reservation System">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Reservation System</h4>
+                            <p class="font-weight-normal">Java, Spring Boot</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!-- Download Portfolio PDF Button -->
+        <div class="row my-4">
+            <div class="col-12 text-center">
+                <a href="assets/Gaurav Mani Resume Updated11.pdf" class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite" download style="font-size:1.15rem;font-weight:700;border-radius:32px;padding:16px 48px;box-shadow:0 4px 16px rgba(44,62,80,0.18);margin-top:12px;">Download Full Portfolio PDF</a>
+            </div>
+        </div>
+    </div><!-- end of container -->
+</section> <!-- end of portfolio section -->
 
     
         </div> <!-- end of container -->
     </section><!-- end of pricing section -->
 
     <!-- section -->
-    <section class="section-sm bg-primary">
+    <section class="section-sm bg-primary java-bg">
         <!-- container -->
-        <div class="container text-center text-sm-left">
+        <div class="container text-center text-sm-left animate__animated animate__fadeInUp">
             <!-- row -->
             <div class="row align-items-center">
                 <div class="col-sm offset-md-1 mb-4 mb-md-0">
-                    <h6 class="title text-light">Want to work with me?</h6>
-                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
+                    <h6 class="title text-light" style="font-size:2rem; font-weight:700; color:#fff; text-shadow:0 2px 12px #61c9e1;">Let's Work Together!</h6>
+                    <p class="m-0 text-light" style="font-size:1.2rem; color:#fff;">I'm open to new opportunities and collaborations. Let's build something great together!</p>
                 </div>
                 <div class="col-sm offset-sm-2 offset-md-3">
-                    <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
+                    <a href="#contact" class="btn btn-lg my-font btn-primary rounded animate__animated animate__pulse animate__infinite" style="font-size:1.2rem;">Contact Me</a>
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -223,53 +377,161 @@
     
 
     <!-- contact section -->
-    <section class="section" id="contact">
+    <section class="section java-bg" id="contact">
         <div class="container text-center">
-            <p class="section-subtitle">How can you communicate?</p>
-            <h6 class="section-title mb-0">Contact Me</h6>
-                <h6>E-mai I'd</h6> <h5> gauravmani9161@gmail.com</h5>
+            <p class="section-subtitle java-orange">Let's Connect</p>
+            <h6 class="section-title mb-0 java-orange">Contact Me</h6>
+            <h6 style="margin-top:12px;">Email</h6> <h5 style="color:#61c9e1;">gauravmani9161@gmail.com</h5>
             <!-- contact form -->
-            <form action="send_email.php" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form action="send_email.php" method="POST" class="contact-form col-md-10 col-lg-8 m-auto animate__animated animate__fadeInUp" style="margin-top:24px;">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>                 
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required style="border-radius:12px;">                 
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>                 
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required style="border-radius:12px;">                 
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea name="message" id="comment" rows="6" class="form-control" placeholder="Write Something"></textarea>
+                        <textarea name="message" id="comment" rows="6" class="form-control" placeholder="Write Something" style="border-radius:12px;"></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">                  
+                        <input type="submit" value="Send Message" class="btn btn-primary rounded" style="font-weight:700;">                  
                     </div>
                 </div>  
             </form>
-            
+            <!-- Testimonials Section -->
+            <div class="testimonials animate__animated animate__fadeInUp" style="margin-top:48px;">
+                <h5 style="font-weight:700;color:#2c3e50;margin-bottom:18px;">What Others Say</h5>
+                <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
+                    <div style="background:rgba(255,255,255,0.8);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px rgba(44,62,80,0.08);max-width:320px;">
+                        <span style="font-size:1.1rem;color:#2c3e50;">"Gaurav is a quick learner and a dedicated developer. His Java and Spring Boot skills are top-notch!"</span>
+                        <br><span style="font-size:0.95rem;color:#61c9e1;font-weight:600;">— Java Developer</span>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.8);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px rgba(44,62,80,0.08);max-width:320px;">
+                        <span style="font-size:1.1rem;color:#2c3e50;">"He brings energy and creativity to every project. Highly recommended for any tech team!"</span>
+                        <br><span style="font-size:0.95rem;color:#c43ea2;font-weight:600;">— Project Manager, WebWorks</span>
+                    </div>
+                </div>
+            </div>
         </div><!-- end of container -->
     </section><!-- end of contact section -->
 
     <!-- footer -->
     <div class="container">
-        <footer class="footer">       
+        <footer class="footer animate__animated animate__fadeInUp java-bg">       
             <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="#">Gaurav</a></p>
             <p class="social-heading mt-2">Look at my social media accounts:</p>
             <div class="social-links text-center m-auto animate__animated animate__fadeIn">
-                <a href="https://www.facebook.com/gauravmanitripathi.mani" class="link" target="_blank"><i class="ti-facebook"></i></a>
-                <a href="https://github.com/gauravmani99" class="link" target="_blank"><i class="ti-github"></i></a>
-                <a href="https://www.instagram.com/narvadagauravmani99/?hl=en" class="link" target="_blank"><i class="ti-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/gaurav-mani-90bb6319a/" class="link" target="_blank"><i class="ti-linkedin"></i></a>
+                <a href="https://github.com/gauravmani99" class="link" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height:24px;width:24px;"></a>
+                <a href="https://www.linkedin.com/in/gaurav-mani-90bb6319a/" class="link" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="height:24px;width:24px;"></a>
             </div>
         </footer>
+        <!-- Scroll to Top Button -->
+        <button id="scrollTopBtn" title="Go to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 4px 16px rgba(44,62,80,0.18);font-size:2rem;cursor:pointer;transition:background 0.3s,transform 0.3s;">
+            <span>&uarr;</span>
+        </button>
     </div>
     </div> <!-- end of page footer -->
-	
-	<!-- core  -->
+    <script>
+    // Tech Stack Section
+    document.addEventListener('DOMContentLoaded', function() {
+        var aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            var techStack = document.createElement('div');
+            techStack.innerHTML = `
+                <div class="tech-stack" style="margin-top:48px;text-align:center;">
+                    <h3 class="java-orange" style="font-weight:700;margin-bottom:18px;">Tech Stack</h3>
+                    <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
+                        <div style="text-align:center;">
+                            <img src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' style='height:32px;width:32px;'><br>
+                            <span style='color:#f89820;'>Java</span>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' style='height:32px;width:32px;'><br>
+                            <span style='color:#3572A5;'>Spring Boot</span>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' style='height:32px;width:32px;'><br>
+                            <span style='color:#f89820;'>MySQL</span>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' style='height:32px;width:32px;'><br>
+                            <span style='color:#3572A5;'>Git</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            aboutSection.appendChild(techStack);
+        }
+    });
+    // Always start at top of page on load (works for all browsers)
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('load', function() {
+        setTimeout(function(){ window.scrollTo(0, 0); }, 10);
+    });
+    // Animate sections on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        var animatedSections = document.querySelectorAll('.section');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, { threshold: 0.2 });
+        animatedSections.forEach(function(section) {
+            observer.observe(section);
+        });
+
+        // Animated background (floating bubbles)
+        var bg = document.getElementById('animated-bg');
+        for(let i=0;i<18;i++){
+            let bubble=document.createElement('div');
+            bubble.style.position='absolute';
+            bubble.style.borderRadius='50%';
+            bubble.style.opacity=Math.random()*0.3+0.2;
+            bubble.style.background='linear-gradient(135deg,#61c9e1,#c43ea2)';
+            bubble.style.width=bubble.style.height=(Math.random()*80+40)+'px';
+            bubble.style.left=(Math.random()*100)+'vw';
+            bubble.style.top=(Math.random()*100)+'vh';
+            bubble.style.filter='blur(2px)';
+            bubble.style.transition='top 8s linear,left 8s linear';
+            bg.appendChild(bubble);
+            setInterval(function(){
+                bubble.style.left=(Math.random()*100)+'vw';
+                bubble.style.top=(Math.random()*100)+'vh';
+            },8000+Math.random()*4000);
+        }
+
+        // Scroll to top button
+        var scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll',function(){
+            if(document.documentElement.scrollTop>200){
+                scrollBtn.style.display='block';
+            }else{
+                scrollBtn.style.display='none';
+            }
+        });
+        scrollBtn.onclick=function(){
+            window.scrollTo({top:0,behavior:'smooth'});
+        };
+
+        // Hide recruiter contact bar after 12 seconds
+        setTimeout(function(){
+            var recruiterBar = document.getElementById('recruiter-contact');
+            if(recruiterBar){ recruiterBar.style.display = 'none'; }
+        },12000);
+    });
+    </script>
+    
+    <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
     <!-- bootstrap 3 affix -->
-	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
