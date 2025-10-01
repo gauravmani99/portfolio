@@ -20,94 +20,38 @@
             scroll-behavior: smooth;
         }
         body {
-            background: linear-gradient(135deg, #232526 0%, #485563 100%);
-            color: #f5f5f5;
-        }
-        .java-bg {
-            background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #232526 0%, #485563 100%);
-        }
-        .java-orange {
-            color: #f89820;
-        }
-        .java-blue {
-            color: #3572A5;
-        }
-        .section-title, .section-subtitle {
-            color: #f89820 !important;
-            text-shadow: 0 2px 12px #3572A5;
-        }
-        .portfolio-card {
-            background: rgba(35,37,38,0.85);
-            border: 2px solid #f89820;
-            color: #f5f5f5;
-        }
-        .portfolio-card-caption {
-            background: rgba(53,114,165,0.12);
-        }
-        .portfolio-card:hover {
-            background: rgba(53,114,165,0.95);
-            border-color: #f89820;
-        }
-        .btn-primary, .btn-outline-primary {
-            background: linear-gradient(90deg, #f89820 0%, #3572A5 100%);
-            color: #fff;
-        }
-        .btn-primary:hover, .btn-outline-primary:hover {
-            background: linear-gradient(90deg, #3572A5 0%, #f89820 100%);
+            background: #f7f9fb;
+            color: #232526;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            margin: 0;
         }
         .custom-navbar {
-            backdrop-filter: blur(12px);
-            background: rgba(255,255,255,0.85)!important;
-            border-radius: 0 0 24px 24px;
-            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+            background: linear-gradient(90deg, #61c9e1 0%, #c43ea2 100%) !important;
+            border-bottom: 1px solid #eaeaea;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.04);
+            border-radius: 0;
+            padding: 0.5rem 0;
         }
-        .portfolio-card {
-            background: rgba(255,255,255,0.7);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(44,62,80,0.12);
-            transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
-            overflow: hidden;
-            position: relative;
+        .custom-navbar .logo {
+            color: #fff !important;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #3572A5;
         }
-        .portfolio-card:hover {
-            transform: translateY(-12px) scale(1.06) rotate(-1deg);
-            box-shadow: 0 16px 48px rgba(44,62,80,0.18);
-            background: rgba(255,255,255,0.95);
-        }
-        .portfolio-card-img {
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-            transition: box-shadow 0.3s;
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-        }
-        .portfolio-card:hover .portfolio-card-img {
-            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
-        }
-        .portfolio-card-caption {
-            background: rgba(97,201,225,0.12);
-            border-radius: 0 0 18px 18px;
-            padding: 18px 0 10px 0;
-            transition: background 0.3s;
-        }
-        .portfolio-card:hover .portfolio-card-caption {
-            background: rgba(97,201,225,0.22);
-        }
-        .section-title, .section-subtitle {
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-        .section-title:hover, .section-subtitle:hover {
-            color: #3498db;
-            text-shadow: 0 2px 12px #61c9e1;
-        }
-        .navbar .nav .item .link {
-            position: relative;
-            transition: color 0.3s;
+        .custom-navbar .nav .item .link {
+            color: #fff;
             font-weight: 600;
             font-size: 1.08rem;
+            margin: 0 0.7rem;
+            transition: color 0.2s;
+            position: relative;
+            text-shadow: 0 2px 8px #3572A5;
         }
-        .navbar .nav .item .link::after {
+        .custom-navbar .nav .item .link:hover,
+        .custom-navbar .nav .item .link:focus {
+            color: #c43ea2;
+        }
+        .custom-navbar .nav .item .link::after {
             content: '';
             position: absolute;
             left: 0; bottom: -4px;
@@ -116,48 +60,157 @@
             transform: scaleX(0);
             transition: transform 0.3s;
         }
-        .navbar .nav .item .link:hover::after {
+        .custom-navbar .nav .item .link:hover::after,
+        .custom-navbar .nav .item .link:focus::after {
             transform: scaleX(1);
+        }
+        .header {
+            background: linear-gradient(120deg, #61c9e1 0%, #c43ea2 100%);
+            color: #fff;
+            min-height: 60vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 20px;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.08);
+        }
+        .header-title {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 12px #3572A5;
+        }
+        .header-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 24px;
+            opacity: 0.95;
+            letter-spacing: 1px;
+        }
+        .skills-highlight {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin: 32px 0 0 0;
+        }
+        .skills-highlight div {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+            padding: 18px 16px 10px 16px;
+            min-width: 90px;
+        }
+        .skills-highlight img {
+            margin-bottom: 6px;
+        }
+        .section {
+            padding: 80px 0 60px 0;
+            background: #f7f9fb;
+        }
+        .section-title {
+            color: #3572A5 !important;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 1.5px;
+        }
+        .section-subtitle {
+            color: #c43ea2 !important;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .about-img-holder {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.10);
+            padding: 18px;
+            max-width: 350px;
+            margin: 0 auto 24px auto;
+        }
+        .about-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .portfolio-card {
+            background: rgba(255,255,255,0.18);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            overflow: hidden;
+            position: relative;
+            border: none;
+            backdrop-filter: blur(12px) saturate(160%);
+            -webkit-backdrop-filter: blur(12px) saturate(160%);
+        }
+        .portfolio-card:hover {
+            background: rgba(255,255,255,0.32);
+        }
+        .portfolio-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 32px rgba(44,62,80,0.16);
+        }
+        .portfolio-card-img {
+            border-radius: 12px 12px 0 0;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .portfolio-card-caption {
+            background: #f7f9fb;
+            border-radius: 0 0 18px 18px;
+            padding: 18px 0 10px 0;
         }
         .btn-primary, .btn-outline-primary {
             background: linear-gradient(90deg, #61c9e1 0%, #c43ea2 100%);
             border: none;
             color: #fff;
             font-weight: 700;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.12);
+            border-radius: 24px;
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.10);
             transition: background 0.3s, box-shadow 0.3s;
         }
         .btn-primary:hover, .btn-outline-primary:hover {
             background: linear-gradient(90deg, #c43ea2 0%, #61c9e1 100%);
             box-shadow: 0 8px 32px rgba(44,62,80,0.18);
         }
-        .about-img-holder {
-            background: rgba(255,255,255,0.6);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(44,62,80,0.12);
-            padding: 18px;
-            max-width: 90vw;
-        }
-        .about-img {
-            max-width: 100%;
-            height: auto;
-        }
         .footer {
-            background: rgba(255,255,255,0.85);
+            background: #fff;
             border-radius: 24px 24px 0 0;
             box-shadow: 0 -4px 24px rgba(44,62,80,0.08);
+            padding: 24px 0 12px 0;
+            margin-top: 32px;
         }
         .social-links a {
             margin: 0 10px;
             font-size: 1.5rem;
-            color: #61c9e1;
+            color: #3572A5;
             transition: color 0.3s, transform 0.3s;
         }
         .social-links a:hover {
             color: #c43ea2;
             transform: scale(1.2) rotate(-8deg);
         }
-
+        #scrollTopBtn {
+            background: linear-gradient(90deg,#61c9e1,#c43ea2);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: background 0.3s,transform 0.3s;
+        }
         /* Responsive Styles */
         @media (max-width: 991.98px) {
             .header-content.container {
@@ -180,7 +233,7 @@
             }
             .skills-highlight {
                 gap: 12px !important;
-                margin-bottom: 72px !important;
+                margin-bottom: 48px !important;
             }
             .about-img-holder {
                 max-width: 98vw;
@@ -196,7 +249,6 @@
             .section-subtitle {
                 font-size: 1.1rem !important;
             }
-            /* Project section: stack cards vertically, add separation */
             .portfolio-scroll-row {
                 display: block !important;
                 flex-wrap: unset !important;
@@ -227,10 +279,10 @@
         }
         @media (max-width: 575.98px) {
             .skills-highlight {
-                margin-bottom: 56px !important;
+                margin-bottom: 32px !important;
             }
             #about.section {
-                margin-top: 32px !important;
+                margin-top: 24px !important;
             }
             .header-title {
                 font-size: 1.3rem !important;
@@ -264,74 +316,105 @@
     <!-- Animated Background -->
     <div id="animated-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></div>
     <!-- Page Navbar -->
-    <nav class="custom-navbar animate__animated animate__fadeInDown" data-spy="affix" data-offset-top="20" style="background: #e05050; box-shadow: 0 2px 8px rgba(250, 130, 212, 0.07);">
-        <div class="container">
-            <a class="logo" href="#" style="font-weight:700; color:#097ef3; font-size:1.5rem;">My Portfolio</a>
-            <ul class="nav">
-                <li class="item"><a class="link" href="#home">Home</a></li>
-                <li class="item"><a class="link" href="#about">About</a></li>
-                <li class="item"><a class="link" href="#portfolio">Projects</a></li>
-                <li class="item"><a class="link" href="#contact">Contact</a></li>
-                <li class="item">
-                  <a class="link" href="chatboat.html">Chatbot</a>
-</li>
-
-            </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                <div class="hamburger-box">
-                  <div class="hamburger-inner"></div>
-                </div>
-            </a>
-        </div>
-    </nav>
+        <nav class="custom-navbar animate__animated animate__fadeInDown" aria-label="Main Navigation">
+            <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+                <a class="logo" href="#home" style="font-weight:800; font-size:1.7rem; letter-spacing:2px; color:#3572A5; text-decoration:none;">Gaurav</a>
+                <button id="nav-toggle" aria-label="Toggle navigation" style="display:none;background:none;border:none;outline:none;cursor:pointer;">
+                    <span style="display:block;width:28px;height:3px;background:#3572A5;margin:6px 0;border-radius:2px;"></span>
+                    <span style="display:block;width:28px;height:3px;background:#3572A5;margin:6px 0;border-radius:2px;"></span>
+                    <span style="display:block;width:28px;height:3px;background:#3572A5;margin:6px 0;border-radius:2px;"></span>
+                </button>
+                <ul class="nav" id="mainNav" style="display:flex;align-items:center;gap:1.5rem;list-style:none;margin:0;">
+                    <li class="item"><a class="link" href="#home">Home</a></li>
+                    <li class="item"><a class="link" href="#about">About</a></li>
+                    <li class="item"><a class="link" href="#portfolio">Projects</a></li>
+                    <li class="item"><a class="link" href="#contact">Contact</a></li>
+                    <li class="item"><a class="link" href="chatboat.html">Chatbot</a></li>
+                </ul>
+            </div>
+            <script>
+                // Responsive navbar toggle
+                const navToggle = document.getElementById('nav-toggle');
+                const mainNav = document.getElementById('mainNav');
+                function handleResize() {
+                    if(window.innerWidth < 768) {
+                        navToggle.style.display = 'block';
+                        mainNav.style.display = 'none';
+                    } else {
+                        navToggle.style.display = 'none';
+                        mainNav.style.display = 'flex';
+                    }
+                }
+                navToggle && navToggle.addEventListener('click', function() {
+                    if(mainNav.style.display === 'flex') {
+                        mainNav.style.display = 'none';
+                    } else {
+                        mainNav.style.display = 'flex';
+                        mainNav.style.flexDirection = 'column';
+                        mainNav.style.background = '#fff';
+                        mainNav.style.position = 'absolute';
+                        mainNav.style.top = '60px';
+                        mainNav.style.right = '16px';
+                        mainNav.style.boxShadow = '0 4px 24px rgba(44,62,80,0.10)';
+                        mainNav.style.borderRadius = '12px';
+                        mainNav.style.padding = '18px 24px';
+                        mainNav.style.gap = '1rem';
+                        mainNav.style.zIndex = '9999';
+                    }
+                });
+                window.addEventListener('resize', handleResize);
+                window.addEventListener('DOMContentLoaded', handleResize);
+            </script>
+        </nav>
 
     <!-- page header -->
-    <header id="home" class="header" style="position: relative; background-color: #2c3e50; min-height: 60vh; color: #fff; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 0 20px;">
-        <!-- Java Developer Branding -->
-        <div class="animate__animated animate__fadeInUp" style="margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:18px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:48px;width:48px;">
-            <span style="font-size:1.15rem;color:#f89820;background:rgba(53,114,165,0.18);padding:8px 24px;border-radius:24px;box-shadow:0 2px 12px #3572A5;font-weight:700;">Java Backend Developer | Spring Boot Specialist</span>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:48px;width:48px;">
-        </div>
-    <!-- Floating Hire Me Button -->
-    <a href="chatboat.html" id="floatingHireMe" class="btn btn-primary animate__animated animate__pulse animate__infinite" style="position:fixed;bottom:96px;right:32px;z-index:99999;font-size:1.15rem;font-weight:700;border-radius:32px;padding:16px 32px;box-shadow:0 4px 16px rgba(44,62,80,0.18);background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;transition:background 0.3s,transform 0.3s;">Chatbot</a>
-        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(209,130,130,0.6) 0%, rgba(97,201,225,0.4) 100%); z-index: 1;"></div>
-        <div class="header-content container animate__animated animate__fadeInUp" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; width: 100%;">
-            <!-- Professional Java Intro -->
-            <h1 class="header-title animate__animated animate__fadeInDown java-orange" style="font-size: 3.2rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px; line-height: 1.2; padding-top: 120px;">
-                <span class="up animate__animated animate__fadeInLeft java-blue" style="font-size: 2.2rem; display: block; opacity: 0.8;">Hi, I'm</span>
-                <span class="down animate__animated animate__fadeInRight java-orange" style="font-size: 3.8rem; font-weight: 900; display: block; opacity: 1; text-shadow: 2px 2px 4px #3572A5;">
-                    Gaurav Mani Tripathi
-                </span>
-            </h1>
-            <p class="header-subtitle animate__animated animate__fadeInUp java-blue" style="font-size: 1.5rem; font-weight: 400; margin-bottom: 24px; opacity: 0.95; letter-spacing: 1px;">
-                Java Backend Developer | Spring Boot | REST APIs | MySQL | Problem Solver
-            </p>
-            <div class="animate__animated animate__fadeInUp" style="margin-bottom: 24px;">
-                <span style="font-size:1.1rem;color:#f9f5f7;font-weight:500;">Building robust, scalable, and secure enterprise solutions with Java and Spring Boot.</span>
-            </div>
-            <!-- Skills Highlight (single row, no duplicates, below intro) -->
-            <div class="skills-highlight animate__animated animate__fadeInUp" style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;width:100%;">
-                <div style="text-align:center;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:32px;width:32px;">
-                    <br><span style="font-size:1rem;color:#f89820;">Java</span>
+            <header id="home" class="header" style="background:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0;">
+                <style>
+                    @media (max-width: 900px) {
+                        .hero-flex { flex-direction: column !important; gap: 32px !important; }
+                        .hero-left, .hero-right { max-width: 100% !important; }
+                        .hero-right { justify-content: center !important; }
+                    }
+                    @media (max-width: 600px) {
+                        .hero-left h1 { font-size: 2.1rem !important; }
+                        .hero-left p { font-size: 1rem !important; }
+                        .hero-btn { font-size: 1rem !important; padding: 14px 18px !important; }
+                        .hero-worked { flex-direction: column !important; gap: 10px !important; }
+                        .hero-avatar { width: 180px !important; height: 180px !important; }
+                    }
+                </style>
+                <div class="container hero-flex" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:64px;max-width:1100px;z-index:2;">
+                    <!-- Left: Text -->
+                    <div class="hero-left" style="flex:1 1 340px;min-width:280px;max-width:480px;text-align:left;">
+                        <h1 style="font-size:2.7rem;font-weight:800;color:#fff;margin-bottom:18px;letter-spacing:1px;">Gaurav Mani Tripathi</h1>
+                        <p style="font-family:'Fira Mono', 'Consolas', monospace;font-size:1.08rem;color:#bdbdbd;line-height:1.7;margin-bottom:32px;max-width:95%;">Java Backend Developer | Spring Boot | REST APIs | MySQL | Problem Solver<br>Building robust, scalable, and secure enterprise solutions with Java and Spring Boot.</p>
+                        <a href="#portfolio" class="hero-btn" style="display:inline-block;background:#4caf11;color:#fff;font-weight:700;font-size:1.13rem;padding:16px 32px;border-radius:8px;box-shadow:0 0 18px #4caf11b0;transition:background 0.2s,box-shadow 0.2s;text-decoration:none;margin-bottom:32px;">Let's get started →</a>
+                        <div style="margin-top:40px;">
+                            <span style="color:#bdbdbd;font-size:1rem;">Worked with</span>
+                            <div class="hero-worked" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
+                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:22px;width:22px;margin-right:8px;">GitHub
+                                </div>
+                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:22px;width:22px;margin-right:8px;">LinkedIn
+                                </div>
+                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" style="height:22px;width:22px;margin-right:8px;">MySQL
+                                </div>
+                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot logo" style="height:22px;width:22px;margin-right:8px;">Spring Boot
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right: Circular Image -->
+                    <div class="hero-right" style="flex:1 1 260px;min-width:200px;display:flex;align-items:center;justify-content:flex-end;">
+                        <div class="hero-avatar" style="width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 60% 40%,#222 60%,#111 100%);overflow:hidden;box-shadow:0 0 48px #000a;display:flex;align-items:center;justify-content:center;">
+                            <img src="assets/imgs/tripathi.jpg" alt="Portrait of Gaurav Mani Tripathi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                        </div>
+                    </div>
                 </div>
-                <div style="text-align:center;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:32px;width:32px;">
-                    <br><span style="font-size:1rem;color:#3572A5;">Spring Boot</span>
-                </div>
-                <div style="text-align:center;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" style="height:32px;width:32px;">
-                    <br><span style="font-size:1rem;color:#f89820;">MySQL</span>
-                </div>
-                <div style="text-align:center;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style="height:32px;width:32px;">
-                    <br><span style="font-size:1rem;color:#3572A5;">Git</span>
-                </div>
-            </div>
-            
-        </div>
-    </header><!-- End of page header -->
+            </header>
     
     <!-- about section -->
     <section class="section pt-0 java-bg" id="about" style="padding: 80px 20px; width:100vw; max-width:100%;">
@@ -342,16 +425,16 @@
                 <!-- about image and caption, always stacked vertically -->
                 <div style="width:100%;display:flex;flex-direction:column;align-items:center;">
                     <div class="about-img-holder animate__animated animate__zoomIn" style="margin-bottom: 30px; margin-top: 40px; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out; perspective: 1000px; max-width: 350px; width:100%; overflow: hidden;">
-                        <img src="assets/imgs/tripathi.jpg" class="about-img" alt=" " style="height: 350px; width: 350px; max-width:100%; transition: transform 0.3s ease-in-out; border-radius: 10px; transform-style: preserve-3d; display: block;">
+                        <img src="assets/imgs/tripathi.jpg" class="about-img" alt="Portrait of Gaurav Mani Tripathi" style="height: 350px; width: 350px; max-width:100%; transition: transform 0.3s ease-in-out; border-radius: 10px; transform-style: preserve-3d; display: block;">
                     </div>
                     <div class="about-caption animate__animated animate__fadeInUp" style="width:100%;max-width:800px;">
                         <p class="section-subtitle" style="font-size: 1.2rem; font-weight: 600; color: #5c5e62; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Who Am I?</p>
                         <h2 class="section-title mb-3" style="font-size: 2.8rem; font-weight: 700; color: #2c3e50; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);">About Me</h2>
-                        <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #fffefe; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">I am a Computer Science Engineering graduate with a strong passion for software development and problem solving. My expertise includes Java, Spring Boot, API design, and scalable application architecture. I am committed to delivering efficient, innovative solutions and thrive in collaborative environments.</p>
+                        <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #eb0b0b; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">I am a Computer Science Engineering graduate with a strong passion for software development and problem solving. My expertise includes Java, Spring Boot, API design, and scalable application architecture. I am committed to delivering efficient, innovative solutions and thrive in collaborative environments.</p>
                         <!-- Resume Download Section -->
                         <div class="download-resume animate__animated animate__fadeInUp" style="margin-top: 40px;">
                             <p class="mt-4" style="font-size: 1rem; font-weight: 400; color: #fefeff;">Download my resume to see my experience and skills:</p>
-                            <a href="Gaurav_Mani_Tripathi Resume.pdf" class="btn btn-rounded btn-outline-primary mt-4 animate__animated animate__pulse animate__infinite" download style="padding: 12px 30px; font-size: 1.1rem; font-weight: 600; color: #fff; background-color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);"><i class="ti-download" style="margin-right: 8px;"></i> Download My Resume</a>
+                            <a href="Gaurav Mani Tripathe Resume Java.pdf" class="btn btn-rounded btn-outline-primary mt-4 animate__animated animate__pulse animate__infinite" download style="padding: 12px 30px; font-size: 1.1rem; font-weight: 600; color: #fff; background-color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);"><i class="ti-download" style="margin-right: 8px;"></i> Download My Resume</a>
                         </div>
                     </div>
                 </div>
@@ -373,8 +456,8 @@
         <div class="row row-cols-1 row-cols-md-2 g-4 my-3 portfolio-scroll-row">
             <div class="col animate__animated animate__zoomIn">
                 <div class="portfolio-card" style="border:2px solid #61c9e1;">
-                    <img src="assets/imgs/Screenshot 2024-08-31 000112.png" class="portfolio-card-img" alt="NOU e-Gyan PORTAL">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
+                    <img src="assets/imgs/Screenshot 2024-08-31 000112.png" class="portfolio-card-img" alt="Screenshot of NOU e-Gyan Portal project">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
                             <h4 style="color:#61c9e1;font-weight:700;">NOU e-Gyan Portal</h4>
@@ -386,8 +469,8 @@
             </div>
             <div class="col animate__animated animate__zoomIn animate__delay-1s">
                 <div class="portfolio-card" style="border:2px solid #c43ea2;">
-                    <img src="assets/imgs/student1.jpeg" class="portfolio-card-img" alt="Student Management System">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
+                    <img src="assets/imgs/student1.jpeg" class="portfolio-card-img" alt="Screenshot of Student Management System project">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot logo" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
                             <h4 style="color:#c43ea2;font-weight:700;">Student Management System</h4>
@@ -402,7 +485,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-4 portfolio-scroll-row">
             <div class="col animate__animated animate__zoomIn animate__delay-2s">
                 <a href="#" class="portfolio-card">
-                    <img class="portfolio-card-img" src="assets/imgs/amazon.png" alt="Amazon Clone">
+                    <img class="portfolio-card-img" src="assets/imgs/amazon.png" alt="Screenshot of Amazon Clone project">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
                             <h4>Amazon Clone (Java)</h4>
@@ -413,7 +496,7 @@
             </div>
             <div class="col animate__animated animate__zoomIn animate__delay-3s">
                 <a href="#" class="portfolio-card">
-                    <img class="portfolio-card-img" src="assets/imgs/restto.png" alt="Restaurant Clone">
+                    <img class="portfolio-card-img" src="assets/imgs/restto.png" alt="Screenshot of Restaurant Clone project">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
                             <h4>Restaurant Clone</h4>
@@ -424,7 +507,7 @@
             </div>
             <div class="col animate__animated animate__zoomIn animate__delay-4s">
                 <a href="#" class="portfolio-card">
-                    <img class="portfolio-card-img" src="assets/imgs/music.png" alt="Music Player">
+                    <img class="portfolio-card-img" src="assets/imgs/music.png" alt="Screenshot of Music Player project">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
                             <h4>Music Player</h4>
@@ -435,7 +518,7 @@
             </div>
             <div class="col animate__animated animate__zoomIn animate__delay-5s">
                 <a href="#" class="portfolio-card">
-                    <img class="portfolio-card-img" src="assets/imgs/railway.jpeg" alt="Reservation System">
+                    <img class="portfolio-card-img" src="assets/imgs/railway.jpeg" alt="Screenshot of Reservation System project">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
                             <h4>Reservation System</h4>
@@ -527,8 +610,8 @@
             <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="#">Gaurav</a></p>
             <p class="social-heading mt-2">Look at my social media accounts:</p>
             <div class="social-links text-center m-auto animate__animated animate__fadeIn">
-                <a href="https://github.com/gauravmani99" class="link" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="height:24px;width:24px;"></a>
-                <a href="https://www.linkedin.com/in/gaurav-mani-90bb6319a/" class="link" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="height:24px;width:24px;"></a>
+                <a href="https://github.com/gauravmani99" class="link" target="_blank" aria-label="GitHub profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:24px;width:24px;"></a>
+                <a href="https://www.linkedin.com/in/gaurav-mani-90bb6319a/" class="link" target="_blank" aria-label="LinkedIn profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:24px;width:24px;"></a>
             </div>
         </footer>
         <!-- Scroll to Top Button -->
