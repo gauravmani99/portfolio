@@ -15,303 +15,267 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background: #f7f9fb;
-            color: #232526;
-            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-            margin: 0;
-        }
-        .custom-navbar {
-            background: linear-gradient(90deg, #61c9e1 0%, #c43ea2 100%) !important;
-            border-bottom: 1px solid #eaeaea;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.04);
-            border-radius: 0;
-            padding: 0.5rem 0;
-        }
-        .custom-navbar .logo {
-            color: #fff !important;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 8px #3572A5;
-        }
-        .custom-navbar .nav .item .link {
-            color: #fff;
-            font-weight: 600;
-            font-size: 1.08rem;
-            margin: 0 0.7rem;
-            transition: color 0.2s;
-            position: relative;
-            text-shadow: 0 2px 8px #3572A5;
-        }
-        .custom-navbar .nav .item .link:hover,
-        .custom-navbar .nav .item .link:focus {
-            color: #c43ea2;
-        }
-        .custom-navbar .nav .item .link::after {
-            content: '';
-            position: absolute;
-            left: 0; bottom: -4px;
-            width: 100%; height: 2px;
-            background: #61c9e1;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        .custom-navbar .nav .item .link:hover::after,
-        .custom-navbar .nav .item .link:focus::after {
-            transform: scaleX(1);
-        }
-        .header {
-            background: linear-gradient(120deg, #61c9e1 0%, #c43ea2 100%);
-            color: #fff;
-            min-height: 60vh;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 20px;
-            border-radius: 0 0 32px 32px;
-            box-shadow: 0 8px 32px rgba(44,62,80,0.08);
-        }
-        .header-title {
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            text-shadow: 0 2px 12px #3572A5;
-        }
-        .header-subtitle {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 24px;
-            opacity: 0.95;
-            letter-spacing: 1px;
-        }
-        .skills-highlight {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-            margin: 32px 0 0 0;
-        }
-        .skills-highlight div {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
-            padding: 18px 16px 10px 16px;
-            min-width: 90px;
-        }
-        .skills-highlight img {
-            margin-bottom: 6px;
-        }
-        .section {
-            padding: 80px 0 60px 0;
-            background: #f7f9fb;
-        }
-        .section-title {
-            color: #3572A5 !important;
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: 1.5px;
-        }
-        .section-subtitle {
-            color: #c43ea2 !important;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-        .about-img-holder {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(44,62,80,0.10);
-            padding: 18px;
-            max-width: 350px;
-            margin: 0 auto 24px auto;
-        }
-        .about-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .portfolio-card {
-            background: rgba(255,255,255,0.18);
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            overflow: hidden;
-            position: relative;
-            border: none;
-            backdrop-filter: blur(12px) saturate(160%);
-            -webkit-backdrop-filter: blur(12px) saturate(160%);
-        }
-        .portfolio-card:hover {
-            background: rgba(255,255,255,0.32);
-        }
-        .portfolio-card:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 12px 32px rgba(44,62,80,0.16);
-        }
-        .portfolio-card-img {
-            border-radius: 12px 12px 0 0;
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .portfolio-card-caption {
-            background: #f7f9fb;
-            border-radius: 0 0 18px 18px;
-            padding: 18px 0 10px 0;
-        }
-        .btn-primary, .btn-outline-primary {
-            background: linear-gradient(90deg, #61c9e1 0%, #c43ea2 100%);
-            border: none;
-            color: #fff;
-            font-weight: 700;
-            border-radius: 24px;
-            padding: 10px 28px;
-            font-size: 1.1rem;
-            box-shadow: 0 2px 12px rgba(44,62,80,0.10);
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-        .btn-primary:hover, .btn-outline-primary:hover {
-            background: linear-gradient(90deg, #c43ea2 0%, #61c9e1 100%);
-            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
-        }
-        .footer {
-            background: #fff;
-            border-radius: 24px 24px 0 0;
-            box-shadow: 0 -4px 24px rgba(44,62,80,0.08);
-            padding: 24px 0 12px 0;
-            margin-top: 32px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            font-size: 1.5rem;
-            color: #3572A5;
-            transition: color 0.3s, transform 0.3s;
-        }
-        .social-links a:hover {
-            color: #c43ea2;
-            transform: scale(1.2) rotate(-8deg);
-        }
-        #scrollTopBtn {
-            background: linear-gradient(90deg,#61c9e1,#c43ea2);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.18);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: background 0.3s,transform 0.3s;
-        }
-        /* Responsive Styles */
-        @media (max-width: 991.98px) {
-            .header-content.container {
-                padding: 0 10px;
-            }
-            .portfolio-card {
-                margin-bottom: 24px;
-            }
-            .about-img-holder {
-                margin-bottom: 18px;
-                padding: 10px;
-            }
-        }
-        @media (max-width: 767.98px) {
-            .header-title {
-                font-size: 2.1rem !important;
-            }
-            .header-content.container {
-                padding: 0 4px;
-            }
-            .skills-highlight {
-                gap: 12px !important;
-                margin-bottom: 48px !important;
-            }
-            .about-img-holder {
-                max-width: 98vw;
-                padding: 6px;
-            }
-            .about-img {
-                height: 180px !important;
-                width: 180px !important;
-            }
-            .section-title {
-                font-size: 1.5rem !important;
-            }
-            .section-subtitle {
-                font-size: 1.1rem !important;
-            }
-            .portfolio-scroll-row {
-                display: block !important;
-                flex-wrap: unset !important;
-                overflow-x: unset !important;
-                gap: unset;
-                scroll-snap-type: none;
-                padding-bottom: 0;
-            }
-            .portfolio-card {
-                min-width: unset;
-                max-width: 98vw;
-                margin: 0 auto 24px auto;
-                padding: 12px 0;
-                box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-                border-radius: 18px;
-            }
-            .portfolio-card-img {
-                max-height: 180px;
-                object-fit: cover;
-            }
-            .testimonials > div {
-                flex-direction: column !important;
-                gap: 18px !important;
-            }
-            .footer {
-                padding: 12px 4px;
-            }
-        }
-        @media (max-width: 575.98px) {
-            .skills-highlight {
-                margin-bottom: 32px !important;
-            }
-            #about.section {
-                margin-top: 24px !important;
-            }
-            .header-title {
-                font-size: 1.3rem !important;
-            }
-            .header-content.container {
-                padding: 0 2px;
-            }
-            .about-img {
-                height: 120px !important;
-                width: 120px !important;
-            }
-            .portfolio-card {
-                min-width: unset;
-                max-width: 99vw;
-                margin: 0 auto 18px auto;
-                padding: 8px 0;
-            }
-            .portfolio-card-img {
-                max-height: 120px;
-            }
-            .testimonials > div > div {
-                max-width: 98vw !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/custom-theme.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+        <!-- Loading Animation -->
+        <div id="site-loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;z-index:999999;display:flex;align-items:center;justify-content:center;">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <script>
+                    window.addEventListener('load', function() {
+                        var loader = document.getElementById('site-loader');
+                        setTimeout(function(){
+                            if(loader) loader.style.display = 'none';
+                }, 500);
+                    });
+        </script>
+        <!-- Top Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark main-navbar" style="position:fixed;top:0;left:0;width:100vw;z-index:10000;background:linear-gradient(90deg,#23243a 0%,#2c3e50 100%);box-shadow:0 2px 12px #00e6ff;transition:background 0.3s;">
+            <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:1200px;backdrop-filter:blur(12px) saturate(180%);background:rgba(35,36,58,0.75);box-shadow:0 4px 24px rgba(44,62,80,0.18),0 2px 12px #00e6ff;transition:background 0.3s,box-shadow 0.3s;border-radius:0 0 24px 24px;">
+                <a class="navbar-brand neon" href="#home" style="font-size:2rem;font-weight:900;letter-spacing:2px;">Gaurav Mani Tripathi</a>
+                <button id="navbar-toggle" aria-label="Toggle navigation" style="display:none;background:none;border:none;outline:none;cursor:pointer;padding:8px 12px;">
+                    <span style="display:block;width:28px;height:3px;background:#00e6ff;margin:6px 0;border-radius:2px;"></span>
+                    <span style="display:block;width:28px;height:3px;background:#00e6ff;margin:6px 0;border-radius:2px;"></span>
+                    <span style="display:block;width:28px;height:3px;background:#00e6ff;margin:6px 0;border-radius:2px;"></span>
+                </button>
+                <ul class="navbar-nav" id="main-navbar-nav" style="display:flex;align-items:center;gap:2rem;list-style:none;margin:0;">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faqs">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+    <script>
+    // Responsive Navbar Toggle (Enhanced)
+    document.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.getElementById('navbar-toggle');
+        var navMenu = document.getElementById('main-navbar-nav');
+        function checkWidth() {
+            if(window.innerWidth <= 991) {
+                navToggle.style.display = 'block';
+                navMenu.classList.remove('show');
+            } else {
+                navToggle.style.display = 'none';
+                navMenu.classList.add('show');
+            }
+        }
+        checkWidth();
+        window.addEventListener('resize', checkWidth);
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('show');
+        });
+        // Hide menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if(window.innerWidth <= 991 && navMenu.classList.contains('show') && !navMenu.contains(e.target) && e.target !== navToggle) {
+                navMenu.classList.remove('show');
+            }
+        });
+        // Hide menu on navigation click
+        navMenu.querySelectorAll('a').forEach(function(link){
+            link.addEventListener('click', function(){
+                if(window.innerWidth <= 991) navMenu.classList.remove('show');
+            });
+        });
+    });
+    </script>
+        </nav>
+          <!-- page header -->
+            <header id="home" class="header" style="background:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0;">
+                <style>
+                    @media (max-width: 900px) {
+                        .hero-flex { flex-direction: column !important; gap: 32px !important; }
+                        .hero-left, .hero-right { max-width: 100% !important; }
+                        .hero-right { justify-content: center !important; }
+                    }
+                    @media (max-width: 600px) {
+                        .hero-left h1 { font-size: 2.1rem !important; }
+                        .hero-left p { font-size: 1rem !important; }
+                        .hero-btn { font-size: 1rem !important; padding: 14px 18px !important; }
+                        .hero-worked { flex-direction: column !important; gap: 10px !important; }
+                        .hero-avatar { width: 180px !important; height: 180px !important; }
+                    }
+                </style>
+                <div class="container hero-flex animate__animated animate__fadeIn" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:48px;max-width:1100px;z-index:2;">
+                    <div class="hero-left" style="flex:1 1 400px;min-width:260px;max-width:520px;text-align:left;display:flex;flex-direction:column;justify-content:center;">
+                        <h1 class="animate__animated animate__fadeInDown" style="font-size:3.2rem;font-weight:900;color:#39ff14;margin-bottom:18px;letter-spacing:2px;line-height:1.1;">Hi, I'm Gaurav Mani Tripathi</h1>
+                        <span class="animate__animated animate__fadeInLeft" style="font-size:1.5rem;font-weight:600;color:#00e6ff;margin-bottom:18px;display:block;">Freelance Web Developer & Consultant</span>
+                        <p class="animate__animated animate__fadeInUp" style="font-size:1.18rem;color:#f2f2f2;margin-bottom:28px;line-height:1.6;">I help startups, businesses, and individuals build modern websites, apps, and backend solutions. Let's work together to bring your ideas to life!</p>
+                        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-bottom:32px;">
+                            <a href="#services" class="hero-btn neon-btn animate__animated animate__fadeInUp" style="font-weight:700;font-size:1.1rem;">View Services</a>
+                            <a href="#contact" class="hero-btn neon-btn animate__animated animate__fadeInUp" style="background:linear-gradient(90deg,#00e6ff 0%,#39ff14 100%);color:#fff;font-weight:700;font-size:1.1rem;">Hire Me</a>
+                        </div>
+                        <div style="margin-top:24px;">
+                            <span style="color:#bdbdbd;font-size:1rem;">Featured on</span>
+                            <div style="display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;">
+                                <a href="https://github.com/gauravmani99" target="_blank" style="background:rgba(57,255,20,0.08);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #39ff14;text-decoration:none;color:#39ff14;font-weight:600;transition:box-shadow 0.2s;box-shadow:0 2px 8px #39ff14;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:22px;width:22px;margin-right:8px;">GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/gaurav-mani-tripathi-90bb6319a/" target="_blank" style="background:rgba(0,230,255,0.08);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #00e6ff;text-decoration:none;color:#00e6ff;font-weight:600;transition:box-shadow 0.2s;box-shadow:0 2px 8px #00e6ff;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:22px;width:22px;margin-right:8px;">LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-right animate__animated animate__fadeIn" style="flex:1 1 320px;min-width:180px;display:flex;align-items:center;justify-content:center;">
+                                                <div class="hero-avatar flip-card" style="width:320px;height:320px;">
+                                                    <div class="flip-card-inner">
+                                                        <div class="flip-card-front" style="border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;height:100%;">
+                                                            <img src="assets/imgs/tripathi.jpg" alt="Portrait of Gaurav Mani Tripathi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                                                        </div>
+                                                        <div class="flip-card-back" style="border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:24px;flex-direction:column;">
+                                                            <div style="font-size:1.1rem;color:#fff;text-align:center;">
+                                                                <b>About Me</b><br>
+                                                                Freelance developer, Java & Spring Boot specialist.<br>
+                                                                Passionate about building modern web solutions.<br>
+                                                                Let's work together!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    </div>
+                </div>
+            </header>
+        <div style="height:70px;"></div>
+        <!-- Process Section -->
+        <!-- Why Work With Me Section -->
+        <section class="section" id="whywork" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+            <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+                <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#39ff14;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #39ff14;">Why Work With Me?</h2>
+                <ul style="font-size:1.15rem;color:#f2f2f2;margin-bottom:32px;text-align:left;max-width:700px;margin:auto;">
+                    <li>Client-focused, clear communication</li>
+                    <li>On-time delivery and regular updates</li>
+                    <li>Custom solutions for your needs</li>
+                    <li>Post-launch support and flexibility</li>
+                    <li>Proven experience and testimonials</li>
+                </ul>
+            </div>
+        </section>
+        <!-- How I Work Section -->
+        <section class="section" id="process" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+            <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+                <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#39ff14;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #39ff14;">How I Work</h2>
+                <ol style="font-size:1.15rem;color:#f2f2f2;margin-bottom:32px;text-align:left;max-width:700px;margin:auto;">
+                    <li><b>Discovery:</b> Understand your goals and requirements.</li>
+                    <li><b>Proposal:</b> Share a clear plan, timeline, and quote.</li>
+                    <li><b>Development:</b> Build your solution with regular updates.</li>
+                    <li><b>Review:</b> You test and provide feedback.</li>
+                    <li><b>Launch & Support:</b> Go live and get post-launch help.</li>
+                </ol>
+            </div>
+        </section>
+        <!-- Pricing Plans Section -->
+        <section class="section" id="pricing" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+            <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+                <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#00e6ff;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #00e6ff;">Pricing Plans</h2>
+                <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+                    <div class="pricing-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #00e6ff;transition:transform 0.3s;">
+                        <h3 style="color:#39ff14;font-size:1.3rem;font-weight:700;margin-bottom:12px;">Basic</h3>
+                        <p style="color:#bdbdbd;font-size:1rem;">Landing page or small website<br><b>₹###+</b></p>
+                    </div>
+                    <div class="pricing-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #39ff14;transition:transform 0.3s;">
+                        <h3 style="color:#00e6ff;font-size:1.3rem;font-weight:700;margin-bottom:12px;">Standard</h3>
+                        <p style="color:#bdbdbd;font-size:1rem;">Full website, backend, or app<br><b>₹###+</b></p>
+                    </div>
+                    <div class="pricing-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #00e6ff;transition:transform 0.3s;">
+                        <h3 style="color:#39ff14;font-size:1.3rem;font-weight:700;margin-bottom:12px;">Premium</h3>
+                        <p style="color:#bdbdbd;font-size:1rem;">Tailored solution, consulting<br><b>Contact for quote</b></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQs Section -->
+        <section class="section" id="faqs" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+            <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+                <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#00e6ff;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #00e6ff;">FAQs</h2>
+                <div class="faq-list" style="text-align:left;max-width:700px;margin:auto;">
+                    <div class="faq-item" style="margin-bottom:18px;">
+                        <button class="faq-question" style="background:none;border:none;color:#00e6ff;font-weight:600;font-size:1.1rem;cursor:pointer;width:100%;text-align:left;padding:0;">How do I start a project?</button>
+                        <div class="faq-answer" style="color:#bdbdbd;display:none;margin-top:6px;">Contact me with your idea or requirements. I’ll reply within 24 hours.</div>
+                    </div>
+                    <div class="faq-item" style="margin-bottom:18px;">
+                        <button class="faq-question" style="background:none;border:none;color:#00e6ff;font-weight:600;font-size:1.1rem;cursor:pointer;width:100%;text-align:left;padding:0;">What technologies do you use?</button>
+                        <div class="faq-answer" style="color:#bdbdbd;display:none;margin-top:6px;">Java, Spring Boot, MySQL, REST APIs, UI/UX, and more.</div>
+                    </div>
+                    <div class="faq-item" style="margin-bottom:18px;">
+                        <button class="faq-question" style="background:none;border:none;color:#00e6ff;font-weight:600;font-size:1.1rem;cursor:pointer;width:100%;text-align:left;padding:0;">Do you offer support after launch?</button>
+                        <div class="faq-answer" style="color:#bdbdbd;display:none;margin-top:6px;">Yes, I provide post-launch support and maintenance options.</div>
+                    </div>
+                </div>
+                <script>
+                // FAQ expand/collapse logic
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.querySelectorAll('.faq-question').forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            var ans = btn.nextElementSibling;
+                            var isOpen = ans.style.display === 'block';
+                            document.querySelectorAll('.faq-answer').forEach(function(a){ a.style.display = 'none'; });
+                            ans.style.display = isOpen ? 'none' : 'block';
+                        });
+                    });
+                });
+                </script>
+            </div>
+        </section>
+        <!-- FAQs Section -->
+        <section class="section" id="faqs" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+            <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+                <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#00e6ff;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #00e6ff;">FAQs</h2>
+                <div class="faq-list" style="text-align:left;max-width:700px;margin:auto;">
+                    <div class="faq-item" style="margin-bottom:18px;">
+                        <button class="faq-question" style="background:none;border:none;color:#00e6ff;font-weight:600;font-size:1.1rem;cursor:pointer;width:100%;text-align:left;padding:0;">How do I start a project?</button>
+                        <div class="faq-answer" style="color:#bdbdbd;display:none;margin-top:6px;">Contact me with your idea or requirements. I’ll reply within 24 hours.</div>
+                    </div>
+                    <div class="faq-item" style="margin-bottom:18px;">
+                        <button class="faq-question" style="background:none;border:none;color:#00e6ff;font-weight:600;font-size:1.1rem;cursor:pointer;width:100%;text-align:left;padding:0;">What technologies do you use?</button>
+                        <div class="faq-answer" style="color:#bdbdbd;display:none;margin-top:6px;">Java, Spring Boot, MySQL, REST APIs, UI/UX, and more.</div>
+                    </div>
+                    <div class="faq-item" style="margin-bottom:18px;">
+                        <button class="faq-question" style="background:none;border:none;color:#00e6ff;font-weight:600;font-size:1.1rem;cursor:pointer;width:100%;text-align:left;padding:0;">Do you offer support after launch?</button>
+                        <div class="faq-answer" style="color:#bdbdbd;display:none;margin-top:6px;">Yes, I provide post-launch support and maintenance options.</div>
+                    </div>
+                </div>
+                <script>
+                // FAQ expand/collapse logic
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.querySelectorAll('.faq-question').forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            var ans = btn.nextElementSibling;
+                            var isOpen = ans.style.display === 'block';
+                            document.querySelectorAll('.faq-answer').forEach(function(a){ a.style.display = 'none'; });
+                            ans.style.display = isOpen ? 'none' : 'block';
+                        });
+                    });
+                });
+                </script>
+            </div>
+        </section>
+        <!-- Why Work With Me Section -->
+        <section class="section" id="whywork" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+            <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+                <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#39ff14;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #39ff14;">Why Work With Me?</h2>
+                <ul style="font-size:1.15rem;color:#f2f2f2;margin-bottom:32px;text-align:left;max-width:700px;margin:auto;">
+                    <li>Client-focused, clear communication</li>
+                    <li>On-time delivery and regular updates</li>
+                    <li>Custom solutions for your needs</li>
+                    <li>Post-launch support and flexibility</li>
+                    <li>Proven experience and testimonials</li>
+                </ul>
+            </div>
+        </section>
     <!-- Recruiter Quick Contact Section -->
-    
+
 
     <!-- Animated Background -->
     <div id="animated-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></div>
@@ -332,128 +296,103 @@
                     <li class="item"><a class="link" href="chatboat.html">Chatbot</a></li>
                 </ul>
             </div>
-            <script>
-                // Responsive navbar toggle
-                const navToggle = document.getElementById('nav-toggle');
-                const mainNav = document.getElementById('mainNav');
-                function handleResize() {
-                    if(window.innerWidth < 768) {
-                        navToggle.style.display = 'block';
-                        mainNav.style.display = 'none';
-                    } else {
-                        navToggle.style.display = 'none';
-                        mainNav.style.display = 'flex';
-                    }
-                }
-                navToggle && navToggle.addEventListener('click', function() {
-                    if(mainNav.style.display === 'flex') {
-                        mainNav.style.display = 'none';
-                    } else {
-                        mainNav.style.display = 'flex';
-                        mainNav.style.flexDirection = 'column';
-                        mainNav.style.background = '#fff';
-                        mainNav.style.position = 'absolute';
-                        mainNav.style.top = '60px';
-                        mainNav.style.right = '16px';
-                        mainNav.style.boxShadow = '0 4px 24px rgba(44,62,80,0.10)';
-                        mainNav.style.borderRadius = '12px';
-                        mainNav.style.padding = '18px 24px';
-                        mainNav.style.gap = '1rem';
-                        mainNav.style.zIndex = '9999';
-                    }
-                });
-                window.addEventListener('resize', handleResize);
-                window.addEventListener('DOMContentLoaded', handleResize);
-            </script>
+            <!-- Custom JS moved to external file -->
         </nav>
 
-    <!-- page header -->
-            <header id="home" class="header" style="background:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0;">
-                <style>
-                    @media (max-width: 900px) {
-                        .hero-flex { flex-direction: column !important; gap: 32px !important; }
-                        .hero-left, .hero-right { max-width: 100% !important; }
-                        .hero-right { justify-content: center !important; }
-                    }
-                    @media (max-width: 600px) {
-                        .hero-left h1 { font-size: 2.1rem !important; }
-                        .hero-left p { font-size: 1rem !important; }
-                        .hero-btn { font-size: 1rem !important; padding: 14px 18px !important; }
-                        .hero-worked { flex-direction: column !important; gap: 10px !important; }
-                        .hero-avatar { width: 180px !important; height: 180px !important; }
-                    }
-                </style>
-                <div class="container hero-flex" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:64px;max-width:1100px;z-index:2;">
-                    <!-- Left: Text -->
-                    <div class="hero-left" style="flex:1 1 340px;min-width:280px;max-width:480px;text-align:left;">
-                        <h1 style="font-size:2.7rem;font-weight:800;color:#fff;margin-bottom:18px;letter-spacing:1px;">Gaurav Mani Tripathi</h1>
-                        <p style="font-family:'Fira Mono', 'Consolas', monospace;font-size:1.08rem;color:#bdbdbd;line-height:1.7;margin-bottom:32px;max-width:95%;">Java Backend Developer | Spring Boot | REST APIs | MySQL | Problem Solver<br>Building robust, scalable, and secure enterprise solutions with Java and Spring Boot.</p>
-                        <a href="#portfolio" class="hero-btn" style="display:inline-block;background:#4caf11;color:#fff;font-weight:700;font-size:1.13rem;padding:16px 32px;border-radius:8px;box-shadow:0 0 18px #4caf11b0;transition:background 0.2s,box-shadow 0.2s;text-decoration:none;margin-bottom:32px;">Let's get started →</a>
-                        <div style="margin-top:40px;">
-                            <span style="color:#bdbdbd;font-size:1rem;">Worked with</span>
-                            <div class="hero-worked" style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
-                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:22px;width:22px;margin-right:8px;">GitHub
-                                </div>
-                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:22px;width:22px;margin-right:8px;">LinkedIn
-                                </div>
-                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" style="height:22px;width:22px;margin-right:8px;">MySQL
-                                </div>
-                                <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 22px;min-width:100px;display:flex;align-items:center;justify-content:center;border:1px solid #222;">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot logo" style="height:22px;width:22px;margin-right:8px;">Spring Boot
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Right: Circular Image -->
-                    <div class="hero-right" style="flex:1 1 260px;min-width:200px;display:flex;align-items:center;justify-content:flex-end;">
-                        <div class="hero-avatar" style="width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 60% 40%,#222 60%,#111 100%);overflow:hidden;box-shadow:0 0 48px #000a;display:flex;align-items:center;justify-content:center;">
-                            <img src="assets/imgs/tripathi.jpg" alt="Portrait of Gaurav Mani Tripathi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
-                        </div>
-                    </div>
-                </div>
-            </header>
+  
     
     <!-- about section -->
     <section class="section pt-0 java-bg" id="about" style="padding: 80px 20px; width:100vw; max-width:100%;">
-        <!-- container -->
         <div class="container text-center animate__animated animate__fadeInUp" style="max-width: 900px; margin: 48px auto 0 auto;">
-            <!-- about wrapper -->
             <div class="about" style="display: flex; flex-direction: column; align-items: center; width:100%;">
-                <!-- about image and caption, always stacked vertically -->
                 <div style="width:100%;display:flex;flex-direction:column;align-items:center;">
-                   
                     <div class="about-caption animate__animated animate__fadeInUp" style="width:100%;max-width:800px;">
                         <p class="section-subtitle" style="font-size: 1.2rem; font-weight: 600; color: #5c5e62; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Who Am I?</p>
-                        <h2 class="section-title mb-3" style="font-size: 2.8rem; font-weight: 700; color: #2c3e50; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);">About Me</h2>
-                        <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #eb0b0b; max-width: 800px; margin: 0 auto; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">I am a Computer Science Engineering graduate with a strong passion for software development and problem solving. My expertise includes Java, Spring Boot, API design, and scalable application architecture. I am committed to delivering efficient, innovative solutions and thrive in collaborative environments.</p>
-                        <!-- Resume Download Section -->
-                        <div class="download-resume animate__animated animate__fadeInUp" style="margin-top: 40px;">
-                            <p class="mt-4" style="font-size: 1rem; font-weight: 400; color: #fefeff;">Download my resume to see my experience and skills:</p>
-                            <a href="Gaurav Mani Tripathe Resume Java.pdf" class="btn btn-rounded btn-outline-primary mt-4 animate__animated animate__pulse animate__infinite" download style="padding: 12px 30px; font-size: 1.1rem; font-weight: 600; color: #fff; background-color: #3498db; border: 2px solid #3498db; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);"><i class="ti-download" style="margin-right: 8px;"></i> Download My Resume</a>
-                        </div>
+                        <h2 class="section-title mb-3" style="font-size: 2.8rem; font-weight: 700; color: #39ff14; letter-spacing: 1.5px; text-transform: uppercase; text-shadow: 0 0 8px #39ff14;">About Me</h2>
+                        <p style="font-size: 1.1rem; font-weight: 400; line-height: 1.8; color: #f2f2f2; max-width: 800px; margin: 0 auto; text-shadow: 0 0 8px #00e6ff;">I am a freelance software developer specializing in web development, backend solutions, and UI/UX consulting. I help clients turn ideas into reality with custom, scalable, and efficient solutions. My experience spans Java, Spring Boot, API design, and remote project delivery. I am committed to clear communication, timely delivery, and building long-term client relationships.</p>
+                        <!-- ...existing code... -->
                     </div>
                 </div>
-            </div><!-- end of about wrapper -->
-        </div><!-- end of container -->
+                <!-- Skills Section -->
+                <section class="section skills-section animate__animated animate__fadeInUp" id="skills" style="width:100%;max-width:700px;margin:48px auto 0 auto;">
+                    <h3 class="section-title" style="color:#00e6ff;text-shadow:0 0 8px #00e6ff;">Skills</h3>
+                    <div class="skills-icons" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;margin-top:24px;">
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#f89820;font-weight:600;margin-top:8px;">Java</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#3572A5;font-weight:600;margin-top:8px;">Spring Boot</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#f89820;font-weight:600;margin-top:8px;">MySQL</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#f7df1e;font-weight:600;margin-top:8px;">JavaScript</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#e34c26;font-weight:600;margin-top:8px;">HTML5</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#2965f1;font-weight:600;margin-top:8px;">CSS3</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style="height:40px;width:40px;transition:transform 0.3s;">
+                            <div style="color:#f1502f;font-weight:600;margin-top:8px;">Git</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </section><!-- end of about section -->
 
         </div><!-- end of container -->
     </section> <!-- end of about section -->
 
-    <!-- service section -->
+    <!-- Services Section -->
+    <section class="section" id="services" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+        <div class="container text-center animate__animated animate__fadeInUp" style="max-width:900px;margin:0 auto;">
+            <h2 class="section-title mb-3" style="font-size:2.5rem;font-weight:700;color:#00e6ff;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #00e6ff;">Services</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;margin-top:32px;">
+                <div class="service-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #00e6ff;transition:transform 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Web Development" style="height:32px;width:32px;margin-bottom:12px;">
+                    <h3 style="color:#39ff14;font-size:1.3rem;font-weight:700;margin-bottom:12px;">Web Development</h3>
+                    <p style="color:#bdbdbd;font-size:1rem;">Custom websites, landing pages, and web apps built for your business.</p>
+                </div>
+                <div class="service-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #39ff14;transition:transform 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Backend Solutions" style="height:32px;width:32px;margin-bottom:12px;">
+                    <h3 style="color:#00e6ff;font-size:1.3rem;font-weight:700;margin-bottom:12px;">Backend Solutions</h3>
+                    <p style="color:#bdbdbd;font-size:1rem;">REST APIs, databases, and scalable backend systems for your projects.</p>
+                </div>
+                <div class="service-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #00e6ff;transition:transform 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="UI/UX Design" style="height:32px;width:32px;margin-bottom:12px;">
+                    <h3 style="color:#39ff14;font-size:1.3rem;font-weight:700;margin-bottom:12px;">UI/UX Design</h3>
+                    <p style="color:#bdbdbd;font-size:1rem;">Modern, responsive, and user-friendly interfaces for web and mobile.</p>
+                </div>
+                <div class="service-card" style="flex:1 1 220px;min-width:220px;max-width:320px;background:rgba(255,255,255,0.08);border-radius:18px;padding:32px;box-shadow:0 2px 12px #39ff14;transition:transform 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Consulting" style="height:32px;width:32px;margin-bottom:12px;">
+                    <h3 style="color:#00e6ff;font-size:1.3rem;font-weight:700;margin-bottom:12px;">Consulting</h3>
+                    <p style="color:#bdbdbd;font-size:1rem;">Project planning, code review, and technical guidance for your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- portfolio section -->
     <section class="section" id="portfolio">
     <div class="container-fluid text-center animate__animated animate__fadeInUp px-2 px-md-4" style="max-width:1400px;">
         <p class="section-subtitle animate__animated animate__fadeInLeft java-orange">MY PROJECTS</p>
-        <h6 class="section-title mb-6 animate__animated animate__fadeInRight java-orange">Projects</h6>
+    <h6 class="section-title mb-6 animate__animated animate__fadeInRight java-orange">Projects & Client Solutions</h6>
+    <p style="font-size:1.1rem;color:#f2f2f2;margin-bottom:24px;">I deliver custom solutions for clients and businesses. Below are some featured projects and examples of my work. Available for new freelance projects!</p>
         <!-- Featured Projects (Horizontal scroll on mobile) -->
         <div class="row row-cols-1 row-cols-md-2 g-4 my-3 portfolio-scroll-row">
             <div class="col animate__animated animate__zoomIn">
-                <div class="portfolio-card" style="border:2px solid #61c9e1;">
+                <div class="portfolio-card" onclick="openModal('NOU e-Gyan Portal', 'assets/imgs/Screenshot 2024-08-31 000112.png', 'Java, Spring Boot, MySQL', 'A scalable university portal for online learning, featuring secure authentication, REST APIs, and responsive UI. <b>Role:</b> Lead Developer')" style="cursor:pointer;">
                     <img src="assets/imgs/Screenshot 2024-08-31 000112.png" class="portfolio-card-img" alt="Screenshot of NOU e-Gyan Portal project">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
                     <span class="portfolio-card-overlay">
@@ -466,7 +405,7 @@
                 </div>
             </div>
             <div class="col animate__animated animate__zoomIn animate__delay-1s">
-                <div class="portfolio-card" style="border:2px solid #c43ea2;">
+                <div class="portfolio-card" onclick="openModal('Student Management System', 'assets/imgs/student1.jpeg', 'Java, Spring Boot, SQL', 'Automated student records, attendance, and results with a modern dashboard. <b>Role:</b> Developer')" style="cursor:pointer;">
                     <img src="assets/imgs/student1.jpeg" class="portfolio-card-img" alt="Screenshot of Student Management System project">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot logo" style="height:28px;width:28px;position:absolute;top:12px;right:12px;">
                     <span class="portfolio-card-overlay">
@@ -477,6 +416,16 @@
                         </span>
                     </span>
                 </div>
+            </div>
+        </div>
+        <!-- Modal for Project Preview -->
+        <div id="projectModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(24,24,36,0.95);z-index:99999;align-items:center;justify-content:center;">
+            <div style="background:#23243a;border-radius:18px;max-width:480px;width:90vw;padding:32px 18px;box-shadow:0 0 32px #00e6ff;position:relative;">
+                <span id="modalClose" onclick="closeModal()" style="position:absolute;top:12px;right:18px;font-size:2rem;color:#00e6ff;cursor:pointer;">&times;</span>
+                <img id="modalImg" src="" alt="Project Image" style="width:100%;border-radius:12px;box-shadow:0 0 16px #39ff14;margin-bottom:18px;">
+                <h4 id="modalTitle" style="color:#39ff14;font-weight:700;margin-bottom:8px;"></h4>
+                <p id="modalTech" style="color:#00e6ff;font-weight:600;margin-bottom:12px;"></p>
+                <div id="modalDesc" style="color:#f2f2f2;font-size:1.08rem;"></div>
             </div>
         </div>
         <!-- Other Projects (Horizontal scroll on mobile) -->
@@ -563,61 +512,86 @@
     
 
     <!-- contact section -->
-    <section class="section java-bg" id="contact">
-        <div class="container text-center">
-            <p class="section-subtitle java-orange">Let's Connect</p>
-            <h6 class="section-title mb-0 java-orange">Contact Me</h6>
-            <h6 style="margin-top:12px;">Email</h6> <h5 style="color:#61c9e1;">gauravmani9161@gmail.com</h5>
-            <!-- contact form -->
-            <form action="send_email.php" method="POST" class="contact-form col-md-10 col-lg-8 m-auto animate__animated animate__fadeInUp" style="margin-top:24px;">
-                <div class="form-row">
-                    <div class="form-group col-sm-6">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required style="border-radius:12px;">                 
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required style="border-radius:12px;">                 
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <textarea name="message" id="comment" rows="6" class="form-control" placeholder="Write Something" style="border-radius:12px;"></textarea>
-                    </div>
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-primary rounded" style="font-weight:700;">                  
-                    </div>
+    <section class="section" id="contact" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+        <div class="container text-center animate__animated animate__fadeInUp" style="max-width:700px;margin:0 auto;">
+            <h2 class="section-title mb-3" style="font-size:2.2rem;font-weight:700;color:#00e6ff;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #00e6ff;">Contact Me</h2>
+            <p style="font-size:1.1rem;color:#f2f2f2;margin-bottom:24px;">Available for freelance projects, collaborations, and client work. Let’s build something great together!</p>
+            <form action="send_email.php" method="POST" class="contact-form animate__animated animate__fadeInUp" style="margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto;">
+                <div class="form-row" style="display:flex;flex-wrap:wrap;gap:18px;justify-content:center;">
+                    <input type="text" name="name" id="contactName" class="form-control" placeholder="Your Name" required style="border-radius:12px;flex:1 1 220px;min-width:180px;">
+                    <input type="email" name="email" id="contactEmail" class="form-control" placeholder="Enter Email" required style="border-radius:12px;flex:1 1 220px;min-width:180px;">
+                    <textarea name="message" id="contactMessage" rows="5" class="form-control" placeholder="Write your message" style="border-radius:12px;width:100%;margin-top:12px;" required></textarea>
+                    <input type="submit" value="Send Message" class="btn neon-btn rounded" style="font-weight:700;width:100%;margin-top:12px;">                  
+                    <div id="contactFeedback" style="margin-top:12px;font-weight:600;color:#39ff14;display:none;width:100%;"></div>
                 </div>  
             </form>
-            <!-- Testimonials Section -->
-            <div class="testimonials animate__animated animate__fadeInUp mt-5">
-                <h5 style="font-weight:700;color:#2c3e50;margin-bottom:18px;">What Others Say</h5>
-                <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
-                    <div style="background:rgba(255,255,255,0.8);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px rgba(44,62,80,0.08);max-width:320px;min-width:220px;flex:1 1 220px;">
-                        <span style="font-size:1.1rem;color:#2c3e50;">"Gaurav is a quick learner and a dedicated developer. His Java and Spring Boot skills are top-notch!"</span>
-                        <br><span style="font-size:0.95rem;color:#61c9e1;font-weight:600;">— Java Developer</span>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.8);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px rgba(44,62,80,0.08);max-width:320px;min-width:220px;flex:1 1 220px;">
-                        <span style="font-size:1.1rem;color:#2c3e50;">"He brings energy and creativity to every project. Highly recommended for any tech team!"</span>
-                        <br><span style="font-size:0.95rem;color:#c43ea2;font-weight:600;">— Project Manager, WebWorks</span>
-                    </div>
-                </div>
+            <div class="social-links text-center animate__animated animate__fadeIn" style="margin-top:32px;display:flex;justify-content:center;gap:24px;">
+                <a href="https://github.com/gauravmani99" class="link" target="_blank" aria-label="GitHub profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:32px;width:32px;"></a>
+                <a href="https://www.linkedin.com/in/gaurav-mani-tripathi-90bb6319a/" class="link" target="_blank" aria-label="LinkedIn profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:32px;width:32px;"></a>
+                <a href="mailto:gauravmani9161@gmail.com" class="link" aria-label="Email"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email logo" style="height:32px;width:32px;"></a>
             </div>
+            <!-- ...existing code... -->
+            <section class="section" id="testimonials" style="padding:80px 20px;width:100vw;max-width:100%;background:rgba(35,36,58,0.55);border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.18);backdrop-filter:blur(16px) saturate(180%);margin-top:32px;">
+                <div class="container text-center animate__animated animate__fadeInUp" style="max-width:700px;margin:0 auto;">
+                    <h2 class="section-title mb-3" style="font-size:2.2rem;font-weight:700;color:#39ff14;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 0 8px #39ff14;">Testimonials</h2>
+                    <div id="testimonial-carousel" style="position:relative;">
+                        <div class="testimonial-item" style="background:rgba(0,230,255,0.12);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px #00e6ff;min-height:120px;">
+                            <span style="font-size:1.1rem;color:#f2f2f2;">"Gaurav is a quick learner and a dedicated developer. His Java and Spring Boot skills are top-notch!"</span>
+                            <br><span style="font-size:0.95rem;color:#39ff14;font-weight:600;">— Java Developer</span>
+                        </div>
+                        <div class="testimonial-item" style="background:rgba(57,255,20,0.12);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px #39ff14;min-height:120px;display:none;">
+                            <span style="font-size:1.1rem;color:#f2f2f2;">"He brings energy and creativity to every project. Highly recommended for any tech team!"</span>
+                            <br><span style="font-size:0.95rem;color:#00e6ff;font-weight:600;">— Project Manager, WebWorks</span>
+                        </div>
+                        <div class="testimonial-item" style="background:rgba(0,230,255,0.12);border-radius:16px;padding:18px 24px;box-shadow:0 2px 12px #00e6ff;min-height:120px;display:none;">
+                            <span style="font-size:1.1rem;color:#f2f2f2;">"Professional, reliable, and delivers on time. Highly recommended!"</span>
+                            <br><span style="font-size:0.95rem;color:#39ff14;font-weight:600;">— Startup Founder</span>
+                        </div>
+                        <button id="prevTestimonial" style="position:absolute;left:-38px;top:50%;transform:translateY(-50%);background:none;border:none;color:#00e6ff;font-size:2rem;cursor:pointer;">&#8592;</button>
+                        <button id="nextTestimonial" style="position:absolute;right:-38px;top:50%;transform:translateY(-50%);background:none;border:none;color:#39ff14;font-size:2rem;cursor:pointer;">&#8594;</button>
+                    </div>
+                    <script>
+                    // Testimonials carousel logic
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const items = document.querySelectorAll('.testimonial-item');
+                        let idx = 0;
+                        function show(idxNew) {
+                            items.forEach((el,i)=>el.style.display=i===idxNew?'block':'none');
+                            idx = idxNew;
+                        }
+                        document.getElementById('prevTestimonial').onclick = function(){ show((idx-1+items.length)%items.length); };
+                        document.getElementById('nextTestimonial').onclick = function(){ show((idx+1)%items.length); };
+                        show(0);
+                    });
+                    </script>
+                </div>
+            </section>
         </div><!-- end of container -->
     </section><!-- end of contact section -->
 
     <!-- footer -->
-    <div class="container">
-        <footer class="footer animate__animated animate__fadeInUp java-bg">       
-            <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="#">Gaurav</a></p>
-            <p class="social-heading mt-2">Look at my social media accounts:</p>
-            <div class="social-links text-center m-auto animate__animated animate__fadeIn">
-                <a href="https://github.com/gauravmani99" class="link" target="_blank" aria-label="GitHub profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:24px;width:24px;"></a>
-                <a href="https://www.linkedin.com/in/gaurav-mani-90bb6319a/" class="link" target="_blank" aria-label="LinkedIn profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:24px;width:24px;"></a>
+    <footer class="footer animate__animated animate__fadeInUp java-bg" style="padding:32px 0;background:rgba(35,36,58,0.95);border-radius:0 0 24px 24px;box-shadow:0 -2px 12px #00e6ff;">
+        <div class="container" style="max-width:900px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;">
+            <div style="font-size:1rem;color:#bdbdbd;">&copy; <span id="year"></span> Gaurav Mani Tripathi. All rights reserved.</div>
+            <div class="footer-links" style="display:flex;gap:18px;">
+                <a href="#home" style="color:#00e6ff;text-decoration:none;font-weight:600;">Home</a>
+                <a href="#about" style="color:#00e6ff;text-decoration:none;font-weight:600;">About</a>
+                <a href="#skills" style="color:#00e6ff;text-decoration:none;font-weight:600;">Skills</a>
+                <a href="#services" style="color:#00e6ff;text-decoration:none;font-weight:600;">Services</a>
+                <a href="#portfolio" style="color:#00e6ff;text-decoration:none;font-weight:600;">Projects</a>
+                <a href="#contact" style="color:#00e6ff;text-decoration:none;font-weight:600;">Contact</a>
             </div>
-        </footer>
-        <!-- Scroll to Top Button -->
-        <button id="scrollTopBtn" title="Go to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 4px 16px rgba(44,62,80,0.18);font-size:2rem;cursor:pointer;transition:background 0.3s,transform 0.3s;">
-            <span>&uarr;</span>
-        </button>
-    </div>
-    </div> <!-- end of page footer -->
+            <div class="footer-social" style="display:flex;gap:12px;">
+                <a href="https://github.com/gauravmani99" target="_blank" aria-label="GitHub profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" style="height:28px;width:28px;"></a>
+                <a href="https://www.linkedin.com/in/gaurav-mani-tripathi-90bb6319a/" target="_blank" aria-label="LinkedIn profile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" style="height:28px;width:28px;"></a>
+            </div>
+        </div>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:linear-gradient(90deg,#61c9e1,#c43ea2);color:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 4px 16px rgba(44,62,80,0.18);font-size:2rem;cursor:pointer;transition:background 0.3s,transform 0.3s;">
+        <span>&uarr;</span>
+    </button>
     <script>
     // Tech Stack Section
     document.addEventListener('DOMContentLoaded', function() {
@@ -721,6 +695,88 @@
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom-scripts.js"></script>
+    <script>
+    // Animated typing effect for hero section
+    document.addEventListener('DOMContentLoaded', function() {
+        const typedText = document.getElementById('typed-text');
+        const phrases = [
+            'Java Backend Developer',
+            'Spring Boot Specialist',
+            'REST APIs & MySQL Enthusiast',
+            'Problem Solver',
+            'Building robust, scalable, secure enterprise solutions.'
+        ];
+        let phraseIndex = 0, charIndex = 0, typing = true;
+        function typeLoop() {
+            if (typing) {
+                if (charIndex < phrases[phraseIndex].length) {
+                    typedText.textContent += phrases[phraseIndex][charIndex++];
+                    setTimeout(typeLoop, 60);
+                } else {
+                    typing = false;
+                    setTimeout(typeLoop, 1200);
+                }
+            } else {
+                if (charIndex > 0) {
+                    typedText.textContent = phrases[phraseIndex].substring(0, --charIndex);
+                    setTimeout(typeLoop, 30);
+                } else {
+                    typing = true;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeLoop, 400);
+                }
+            }
+        }
+        typedText.textContent = '';
+        typeLoop();
+    });
+    </script>
 
 </body>
+    <script>
+    // Contact form validation and feedback
+    document.querySelector('.contact-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = document.getElementById('contactName').value.trim();
+        var email = document.getElementById('contactEmail').value.trim();
+        var message = document.getElementById('contactMessage').value.trim();
+        var feedback = document.getElementById('contactFeedback');
+        if(!name || !email || !message) {
+            feedback.textContent = 'Please fill in all fields.';
+            feedback.style.color = '#ff3b3b';
+            feedback.style.display = 'block';
+            return;
+        }
+        var emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if(!emailPattern.test(email)) {
+            feedback.textContent = 'Please enter a valid email address.';
+            feedback.style.color = '#ff3b3b';
+            feedback.style.display = 'block';
+            return;
+        }
+        feedback.textContent = 'Thank you for reaching out! Your message has been sent.';
+        feedback.style.color = '#39ff14';
+        feedback.style.display = 'block';
+        this.reset();
+    });
+    </script>
+    <script>
+    // Modal logic for project previews
+    function openModal(title, img, tech, desc) {
+        document.getElementById('projectModal').style.display = 'flex';
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalImg').src = img;
+        document.getElementById('modalTech').textContent = tech;
+        document.getElementById('modalDesc').innerHTML = desc;
+    }
+    function closeModal() {
+        document.getElementById('projectModal').style.display = 'none';
+    }
+    // Close modal on background click
+    document.getElementById('projectModal').addEventListener('click', function(e) {
+        if(e.target === this) closeModal();
+    });
+    </script>
 </html>
