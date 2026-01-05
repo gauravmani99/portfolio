@@ -1,0 +1,20 @@
+{
+  "name": "Gaurav Mani Tripathi",
+  "short_name": "Gaurav",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0b0b0b",
+  "icons": [
+    {
+      "src": "assets/imgs/tripathi1.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/imgs/tripathi1.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
