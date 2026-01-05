@@ -11,6 +11,8 @@
     <meta name="author" content="Gaurav Mani Tripathi">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Montserrat for headings, Open Sans for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base */
         * {
@@ -55,12 +57,16 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            font-family: 'Open Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.65;
             color: var(--light);
             background-color: var(--dark);
             overflow-x: hidden;
             background-image: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
         }
         
         .container {
@@ -75,8 +81,10 @@
         }
         
         h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
         
         h1 {
@@ -240,6 +248,9 @@
             background-clip: text;
             color: transparent;
             text-shadow: 0 0 15px var(--primary-glow);
+            font-family: 'Montserrat', 'Poppins', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.6px;
+            line-height: 1;
         }
         
         .nav-links {
@@ -1195,7 +1206,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Gaurav</a>
+            <a href="#" class="logo">MyPortfolio</a>
             <ul id="mainNav" class="nav-links" role="menubar">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
